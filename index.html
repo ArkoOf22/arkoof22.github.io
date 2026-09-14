@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arkodeep Koley — Software Developer & Backend Systems</title>
+  <meta name="description" content="Portfolio of Arkodeep Koley, Backend Developer & Software Developer building reliable, high-scale payment infrastructure in Go and Java. Distributed systems, concurrency correctness, and idempotent API design." />
+  <meta name="keywords" content="Arkodeep Koley, Software Developer, Backend Developer, Payment Infrastructure, Go, Golang, Java, Distributed Systems, Concurrency, Idempotency, Twid, Maersk" />
+
+  <!-- Google Fonts: Geist & Geist Mono (Vercel Developer Typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Devicon CDN for crisp tech logos -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%230B0D11'/><text x='50' y='58' font-family='monospace' font-weight='bold' font-size='42' text-anchor='middle' dominant-baseline='central' fill='%2310B981'>AK</text></svg>" type="image/svg+xml" />
+</head>
+<body>
+
+  <!-- Top System Bar -->
+  <header class="top-nav" id="topNav">
+    <div class="nav-inner">
+      <div class="brand">
+        <a href="#hero" class="brand-link">
+          <span class="brand-mark">AK</span>
+          <span class="brand-name">Arkodeep Koley</span>
+        </a>
+        <span class="brand-separator">//</span>
+        <span class="brand-role">Software Developer • Backend Systems</span>
+      </div>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#projects" class="nav-item">Systems Architecture</a>
+        <a href="#skills" class="nav-item">Technical Arsenal</a>
+        <a href="#education" class="nav-item">Milestones</a>
+        <a href="#contact" class="nav-item nav-item-cta">Initiate Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: Asymmetric Hero with Live Distributed Lock & Payment Simulator -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <!-- Left: Engineering Dossier -->
+        <div class="hero-dossier">
+          <div class="status-badge-strip">
+            <span class="pulse-beacon"></span>
+            <span class="status-caption">Software Developer @ Twid • Bangalore, India</span>
+          </div>
+
+          <h1 class="hero-headline">
+            Backend developer building mission-critical payment infrastructure in Go and Java.
+          </h1>
+
+          <p class="hero-summary">
+            Specializing in high-throughput distributed systems where failure has a direct financial cost.
+            I design <strong>concurrency-safe idempotent APIs</strong>, centralized banking proxy engines,
+            and telemetry pipelines that eliminate production noise.
+          </p>
+
+          <!-- Asymmetric Metrics Strip -->
+          <div class="cockpit-stats-strip">
+            <div class="stat-cell">
+              <span class="stat-num">₹40+ Cr</span>
+              <span class="stat-label">GMV Transacted</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-num">18</span>
+              <span class="stat-label">Banking Issuers</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-num">92%</span>
+              <span class="stat-label">Log Cut (444M → 33M)</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-num">1.5 Days</span>
+              <span class="stat-label">Issuer Onboarding</span>
+            </div>
+          </div>
+
+          <div class="hero-actions-row">
+            <a href="#projects" class="btn btn-primary">
+              <span>Inspect Systems Architecture</span>
+              <span class="btn-glyph">↓</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span>Direct Reachout</span>
+            </a>
+            <div class="hero-inline-links">
+              <a href="https://github.com/ArkoOf22" target="_blank" rel="noopener noreferrer" class="link-mono">github.com/ArkoOf22</a>
+              <span class="link-sep">•</span>
+              <a href="mailto:arkodeepkoley123@gmail.com" class="link-mono">arkodeepkoley123@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: The Memorable Centerpiece (Interactive Distributed Lock & Idempotency Console) -->
+        <div class="hero-terminal-side">
+          <div class="terminal-panel">
+            <div class="terminal-bar">
+              <div class="terminal-window-controls">
+                <span class="ctrl-dot"></span>
+                <span class="ctrl-dot"></span>
+                <span class="ctrl-dot"></span>
+              </div>
+              <span class="terminal-tab-name">twid-issuer-proxy // mutex_idempotency.go</span>
+              <span class="terminal-badge">STABLE (4 REPLICAS)</span>
+            </div>
+
+            <div class="terminal-inner">
+              <div class="sim-header">
+                <span class="sim-title">Interactive Transaction & Concurrency Inspector</span>
+                <span class="sim-note">Live simulation of real-money idempotent state machine</span>
+              </div>
+
+              <div class="sim-controls-grid">
+                <div class="sim-control-group">
+                  <label for="simIssuer" class="sim-label">Target Issuer</label>
+                  <select id="simIssuer" class="sim-select">
+                    <option value="AU_BANK">AU Small Finance Bank</option>
+                    <option value="KOTAK_BANK">Kotak Mahindra Bank</option>
+                    <option value="RBL_BANK">RBL Bank</option>
+                    <option value="CRED">CRED Rewards Engine</option>
+                  </select>
+                </div>
+
+                <div class="sim-control-group">
+                  <label for="simOperation" class="sim-label">Transaction Type</label>
+                  <select id="simOperation" class="sim-select">
+                    <option value="REDEEM">Redeem Points (Real-Money)</option>
+                    <option value="REFUND">Idempotent Refund</option>
+                    <option value="ACCRUE">Accrual Ledger Commit</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Live Request Struct Inspection -->
+              <div class="sim-code-preview">
+                <div class="c-row"><span class="t-kw">type</span> <span class="t-struct">PaymentIntent</span> <span class="t-kw">struct</span> {</div>
+                <div class="c-row ind-1">Issuer:       <span class="t-val" id="codeIssuerVal">"AU_BANK"</span>,</div>
+                <div class="c-row ind-1">IdempKey:     <span class="t-key" id="codeKeyVal">"idemp_9f2a08c1"</span>,</div>
+                <div class="c-row ind-1">LockLease:    <span class="t-lock">RedisMutex.Acquire(TTL: 10s)</span>,</div>
+                <div class="c-row ind-1">State:        <span class="t-status" id="codeStateVal">READY_TO_DISPATCH</span>,</div>
+                <div class="c-row">}</div>
+              </div>
+
+              <!-- Action Bar -->
+              <div class="sim-action-row">
+                <button id="simDispatchBtn" class="sim-btn">
+                  <span>Commit Idempotent Transaction</span>
+                </button>
+                <div class="sim-meta-pill" id="simLatencyPill">
+                  <span>P95 Latency:</span> <strong>28ms</strong>
+                </div>
+              </div>
+
+              <!-- Log Stream Output -->
+              <div class="sim-log-box" id="simLogBox" aria-live="polite">
+                <div class="log-line log-sys"><span class="ts">01:00:12</span> [PROXY] Issuer proxy initialized across 18 banking partner interfaces.</div>
+                <div class="log-line log-ok"><span class="ts">01:00:13</span> [MUTEX] Concurrency synchronization armed. Ready to dispatch.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Production Dossier (Twid & Maersk) -->
+    <section id="experience" class="section border-top">
+      <div class="container">
+        <header class="section-header-cockpit">
+          <div class="section-title-wrap">
+            <span class="section-category">Professional Dossier</span>
+            <h2 class="section-title">Production Experience</h2>
+          </div>
+          <p class="section-intro">
+            Two years of hands-on software development across enterprise payment engines and global logistics microservices.
+          </p>
+        </header>
+
+        <div class="dossier-timeline">
+          <!-- Twid -->
+          <article class="timeline-entry">
+            <div class="entry-sidebar">
+              <h3 class="entry-org">Twid</h3>
+              <span class="entry-role">Software Developer</span>
+              <span class="entry-period">Jan 2025 – Present</span>
+              <span class="entry-location">Bangalore, India</span>
+              <div class="entry-tag-strip">
+                <span class="tag-accent">Production Payments</span>
+                <span class="tag-accent">Core SDE</span>
+              </div>
+            </div>
+
+            <div class="entry-body">
+              <ul class="entry-achievements">
+                <li>
+                  <strong>18 Banking & Loyalty Issuer Integrations:</strong> Own and maintain mission-critical integrations across 18 banking partners (AU Bank, RBL, Kotak, CRED, and others) within <code>issuer-service</code>, a Go microservice split across 4 deployable pods exposing a unified, idempotent redemption, refund, and accrual API.
+                </li>
+                <li>
+                  <strong>Config-Driven Issuer Proxy:</strong> Designed and built a config-driven Issuer Service Proxy centralizing routing, orchestration, and load balancing across all 18 integrations, replacing per-issuer hardcoded logic and slashing new partner onboarding cycles to <strong>1.5 days</strong>.
+                </li>
+                <li>
+                  <strong>₹40+ Cr GMV Engine:</strong> Delivered 10+ production payment integrations and platform enhancements end-to-end (API design, testing, rollout, telemetry), directly supporting initiatives contributing to over Rs. 40 Cr in gross merchandise value.
+                </li>
+                <li>
+                  <strong>92% Production Log Slashed:</strong> Engineered a configurable logging platform with issuer-, customer-, and brand-level controls, cutting production log volume by 92% (from 444M down to 33M lines/day; 240GB down to 53GB/day), lowering cloud infrastructure and storage expenses.
+                </li>
+                <li>
+                  <strong>Incident Debugging: 4 Days → 1 Day:</strong> Elevated production observability by implementing panic recovery handlers, runtime diagnostics, distributed tracing, and Slack-based alerting, reducing incident detection and resolution time by <strong>75%</strong>.
+                </li>
+                <li>
+                  <strong>Concurrency & Race-Condition Correctness:</strong> Resolved high-impact concurrency vulnerabilities in wallet synchronization, issuer mapping, and point expiry workflows using synchronization and idempotent update strategies; identified and mitigated production anomalies including refund double-counting and points-timeout errors.
+                </li>
+              </ul>
+
+              <div class="entry-stack">
+                <span class="stack-badge">Go (Golang)</span>
+                <span class="stack-badge">Payment Infrastructure</span>
+                <span class="stack-badge">Idempotency Controls</span>
+                <span class="stack-badge">Distributed Locks</span>
+                <span class="stack-badge">Redis</span>
+                <span class="stack-badge">Kafka</span>
+                <span class="stack-badge">PostgreSQL</span>
+                <span class="stack-badge">Distributed Tracing</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- A.P. Moller - Maersk -->
+          <article class="timeline-entry">
+            <div class="entry-sidebar">
+              <h3 class="entry-org">A.P. Moller – Maersk</h3>
+              <span class="entry-role">Software Developer Intern</span>
+              <span class="entry-period">May 2024 – Nov 2024</span>
+              <span class="entry-location">Bangalore, India</span>
+              <div class="entry-tag-strip">
+                <span class="tag-accent">Global Logistics</span>
+                <span class="tag-accent">Java Backend</span>
+              </div>
+            </div>
+
+            <div class="entry-body">
+              <ul class="entry-achievements">
+                <li>
+                  <strong>50% Java Memory Optimization:</strong> Diagnosed and profiled Java heap utilization using VisualVM, cutting runtime memory consumption in half (approx. <strong>2.4GB down to 1.2GB</strong>) in an enterprise Spring Boot microservice.
+                </li>
+                <li>
+                  <strong>15,000 Records/Day Pipeline:</strong> Automated an enterprise data ingestion pipeline processing 15,000 records daily, cutting manual operational effort by <strong>80%</strong>.
+                </li>
+                <li>
+                  <strong>Kubernetes & Prometheus Observability:</strong> Implemented metrics collection harnesses across 6 production microservices, establishing operational baseline visibility.
+                </li>
+              </ul>
+
+              <div class="entry-stack">
+                <span class="stack-badge">Java</span>
+                <span class="stack-badge">Spring Boot</span>
+                <span class="stack-badge">VisualVM Heap Profiling</span>
+                <span class="stack-badge">Memory Management</span>
+                <span class="stack-badge">Kubernetes</span>
+                <span class="stack-badge">Prometheus</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Asymmetric Bento Systems Architecture -->
+    <section id="projects" class="section border-top">
+      <div class="container">
+        <header class="section-header-cockpit">
+          <div class="section-title-wrap">
+            <span class="section-category">Architectural Deep Dives</span>
+            <h2 class="section-title">Systems & Production Works</h2>
+          </div>
+          <p class="section-intro">
+            Real-world systems engineered for failure-mode isolation, idempotency guarantees, and structural verification.
+          </p>
+        </header>
+
+        <!-- Asymmetric Bento Grid (Design Variance = 8) -->
+        <div class="bento-asymmetric-grid">
+          <!-- Card 1 (Span 2): JobClaw with Interactive Fact-Guard Inspector -->
+          <article class="bento-card bento-span-2">
+            <div class="bento-top">
+              <div class="bento-tag-wrap">
+                <span class="bento-pill">Approval-Gated AI Pipeline</span>
+                <span class="bento-meta">Go • SQLite • OpenRouter LLM • MCP • AWS EC2 • 32K LOC • 243 Tests</span>
+              </div>
+              <h3 class="bento-heading">JobClaw: Automated ATS Discovery & Fact-Guard Pipeline</h3>
+              <p class="bento-lead">
+                An approval-gated job discovery and application-prep platform in Go that scrapes, parses, and scores postings across ATS platforms (Greenhouse, LinkedIn, Indeed, Glassdoor) while stopping at a strict human-in-the-loop gate before any consequential execution.
+              </p>
+            </div>
+
+            <!-- Interactive Fact-Guard Diff Tool -->
+            <div class="interactive-sub-feature">
+              <div class="diff-header">
+                <span class="diff-title">Fact-Guard Structural Integrity Visualizer</span>
+                <div class="diff-toggle-group">
+                  <button id="showRawBtn" class="diff-btn">Unsafe Raw LLM</button>
+                  <button id="showGuardedBtn" class="diff-btn active">Fact-Guard Verified (~87% Cost Cut)</button>
+                </div>
+              </div>
+
+              <div class="diff-screen" id="diffScreen">
+                <div class="diff-row"><span class="diff-tag verified">[PRESERVED]</span> Candidate master credentials strictly mapped from deterministic store.</div>
+                <div class="diff-row"><span class="diff-tag verified">[ISOLATED]</span> Contact and education data kept completely outside model context token reach.</div>
+                <div class="diff-row"><span class="diff-tag verified">[OPTIMIZED]</span> Cost reduced from $0.039 to $0.0049 per resume via targeted delta prompt engineering.</div>
+                <div class="diff-row"><span class="diff-tag verified">[INTEGRITY]</span> Fixed silent-success parser failures that previously dropped source data undetected.</div>
+              </div>
+            </div>
+
+            <div class="bento-bottom">
+              <a href="https://github.com/ArkoOf22" target="_blank" rel="noopener noreferrer" class="bento-link">
+                <span>View Repository on GitHub (ArkoOf22)</span>
+                <span class="link-arrow">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Twid Config-Driven Issuer Proxy -->
+          <article class="bento-card">
+            <div class="bento-top">
+              <div class="bento-tag-wrap">
+                <span class="bento-pill">Payment Infrastructure</span>
+                <span class="bento-meta">Go • 18 Banking Issuers • Idempotency</span>
+              </div>
+              <h3 class="bento-heading">Config-Driven Banking Issuer Service Proxy</h3>
+              <p class="bento-lead">
+                Centralized routing, orchestration, and load-balancing proxy across 18 banking partners (AU Bank, RBL, Kotak, CRED) exposing unified redemption, refund, and accrual APIs.
+              </p>
+              <ul class="bento-spec-list">
+                <li>Onboarding time cut from weeks down to <strong>1.5 days</strong> via schema-driven routing.</li>
+                <li>Eradicated race conditions and refund double-counting via distributed lease locks.</li>
+                <li>Backing transaction engine for <strong>₹40+ Cr in gross merchandise value</strong>.</li>
+              </ul>
+            </div>
+            <div class="bento-bottom">
+              <span class="bento-badge-live">In Production @ Twid</span>
+            </div>
+          </article>
+
+          <!-- Card 3: High-Throughput Log Reduction Platform -->
+          <article class="bento-card">
+            <div class="bento-top">
+              <div class="bento-tag-wrap">
+                <span class="bento-pill">Distributed Observability</span>
+                <span class="bento-meta">Go • Kafka • ELK • Prometheus</span>
+              </div>
+              <h3 class="bento-heading">High-Throughput Configurable Log Filter Platform</h3>
+              <p class="bento-lead">
+                Enterprise telemetry filtering platform engineered with issuer-, customer-, and brand-level controls, cutting daily production log volume by 92%.
+              </p>
+              <ul class="bento-spec-list">
+                <li>Slashed volume from <strong>444M down to 33M lines/day (240GB → 53GB/day)</strong>.</li>
+                <li>Panic recovery and distributed tracing dropped incident MTTR from <strong>4 days to 1 day</strong>.</li>
+                <li>Directly lowered cloud logging compute and elastic storage infrastructure costs.</li>
+              </ul>
+            </div>
+            <div class="bento-bottom">
+              <span class="bento-badge-live">In Production @ Twid</span>
+            </div>
+          </article>
+
+          <!-- Card 4 (Span 2): VisualVM Java Heap Profiling & Ingestion at Maersk -->
+          <article class="bento-card bento-span-2">
+            <div class="bento-top">
+              <div class="bento-tag-wrap">
+                <span class="bento-pill">Performance Engineering</span>
+                <span class="bento-meta">Java • Spring Boot • VisualVM • Kubernetes</span>
+              </div>
+              <h3 class="bento-heading">Java Runtime Memory Optimization & High-Volume Data Ingestion</h3>
+              <p class="bento-lead">
+                Diagnosed and profiled Java heap allocation hotspots using VisualVM, reducing runtime heap memory consumption by <strong>50% (approx. 2.4GB down to 1.2GB)</strong> in a core Spring Boot service at A.P. Moller – Maersk.
+              </p>
+            </div>
+
+            <div class="memory-profile-display">
+              <div class="mem-metric-box">
+                <span class="mem-caption">Pre-Optimization Heap</span>
+                <span class="mem-value mem-danger">~2.4 GB</span>
+                <span class="mem-sub">Frequent GC pauses under load</span>
+              </div>
+              <div class="mem-divider">→</div>
+              <div class="mem-metric-box">
+                <span class="mem-caption">Post-Optimization Heap</span>
+                <span class="mem-value mem-success">~1.2 GB (-50%)</span>
+                <span class="mem-sub">Stable JVM footprint with zero leaks</span>
+              </div>
+              <div class="mem-divider">|</div>
+              <div class="mem-metric-box">
+                <span class="mem-caption">Automated Ingestion</span>
+                <span class="mem-value">15k rec/day</span>
+                <span class="mem-sub">80% manual effort reduction</span>
+              </div>
+            </div>
+
+            <div class="bento-bottom">
+              <span class="bento-badge-live">Deployed @ A.P. Moller – Maersk</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Technical Arsenal (Categorized by Engineering Layer) -->
+    <section id="skills" class="section border-top">
+      <div class="container">
+        <header class="section-header-cockpit">
+          <div class="section-title-wrap">
+            <span class="section-category">Stack Matrix</span>
+            <h2 class="section-title">Technical Arsenal</h2>
+          </div>
+          <p class="section-intro">
+            Categorized across the full engineering lifecycle from execution runtimes to observability harnesses.
+          </p>
+        </header>
+
+        <div class="cockpit-arsenal-grid">
+          <!-- Layer 1 -->
+          <div class="arsenal-layer">
+            <div class="layer-header">
+              <span class="layer-index">01</span>
+              <h3 class="layer-title">Runtimes & Languages</h3>
+            </div>
+            <div class="layer-tokens">
+              <div class="token-pill highlight"><i class="devicon-go-original-wordmark colored"></i><span>Go (Golang)</span></div>
+              <div class="token-pill highlight"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+              <div class="token-pill"><i class="devicon-postgresql-plain colored"></i><span>SQL</span></div>
+              <div class="token-pill"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+            </div>
+          </div>
+
+          <!-- Layer 2 -->
+          <div class="arsenal-layer">
+            <div class="layer-header">
+              <span class="layer-index">02</span>
+              <h3 class="layer-title">Distributed Systems & Concurrency</h3>
+            </div>
+            <div class="layer-tokens">
+              <div class="token-pill highlight"><span>Microservices Architecture</span></div>
+              <div class="token-pill highlight"><span>Idempotent API Design</span></div>
+              <div class="token-pill highlight"><span>Concurrency & Race Controls</span></div>
+              <div class="token-pill"><i class="devicon-apachekafka-original colored"></i><span>Apache Kafka</span></div>
+              <div class="token-pill"><i class="devicon-redis-plain colored"></i><span>Redis Distributed Locks</span></div>
+              <div class="token-pill"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+              <div class="token-pill"><span>gRPC</span></div>
+              <div class="token-pill"><span>Event-Driven Architecture</span></div>
+              <div class="token-pill"><i class="devicon-spring-original colored"></i><span>Spring Boot</span></div>
+            </div>
+          </div>
+
+          <!-- Layer 3 -->
+          <div class="arsenal-layer">
+            <div class="layer-header">
+              <span class="layer-index">03</span>
+              <h3 class="layer-title">Cloud & Infrastructure</h3>
+            </div>
+            <div class="layer-tokens">
+              <div class="token-pill"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS (EC2, S3, IAM)</span></div>
+              <div class="token-pill"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+              <div class="token-pill"><i class="devicon-kubernetes-plain colored"></i><span>Kubernetes</span></div>
+              <div class="token-pill"><i class="devicon-jenkins-line colored"></i><span>Jenkins</span></div>
+              <div class="token-pill"><span>CI/CD Automation</span></div>
+              <div class="token-pill"><i class="devicon-git-plain colored"></i><span>Git & GitHub</span></div>
+            </div>
+          </div>
+
+          <!-- Layer 4 -->
+          <div class="arsenal-layer">
+            <div class="layer-header">
+              <span class="layer-index">04</span>
+              <h3 class="layer-title">Observability & Profiling</h3>
+            </div>
+            <div class="layer-tokens">
+              <div class="token-pill highlight"><i class="devicon-prometheus-original colored"></i><span>Prometheus</span></div>
+              <div class="token-pill highlight"><i class="devicon-grafana-original colored"></i><span>Grafana</span></div>
+              <div class="token-pill"><span>ELK Stack</span></div>
+              <div class="token-pill"><span>Distributed Tracing</span></div>
+              <div class="token-pill highlight"><span>VisualVM Heap Profiling</span></div>
+              <div class="token-pill"><span>Runtime Panic Recovery</span></div>
+            </div>
+          </div>
+
+          <!-- Layer 5 -->
+          <div class="arsenal-layer">
+            <div class="layer-header">
+              <span class="layer-index">05</span>
+              <h3 class="layer-title">AI Tooling & Cost Optimization</h3>
+            </div>
+            <div class="layer-tokens">
+              <div class="token-pill"><span>Cursor</span></div>
+              <div class="token-pill"><span>OpenRouter</span></div>
+              <div class="token-pill highlight"><span>~87% Token Cost Optimization</span></div>
+              <div class="token-pill"><span>LLM Fallback Topologies</span></div>
+              <div class="token-pill"><span>Model Context Protocol (MCP)</span></div>
+              <div class="token-pill highlight"><span>Fact-Guard Verification</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Verified Milestones & Academic Pedigree -->
+    <section id="education" class="section border-top">
+      <div class="container">
+        <div class="dual-column-layout">
+          <!-- Milestones -->
+          <div class="col-half">
+            <header class="col-header">
+              <span class="section-category">Track Record</span>
+              <h2 class="col-title">Verified Milestones</h2>
+            </header>
+
+            <div class="milestone-ledger">
+              <div class="milestone-row">
+                <div class="m-metric">Winner</div>
+                <div class="m-info">
+                  <h4 class="m-title">Twid Hackathon</h4>
+                  <p class="m-desc">Engineered an augmented-reality rewards application leveraging geolocation and merchant-based targeting.</p>
+                </div>
+              </div>
+
+              <div class="milestone-row">
+                <div class="m-metric">₹40+ Cr</div>
+                <div class="m-info">
+                  <h4 class="m-title">Payment Scale</h4>
+                  <p class="m-desc">Supported 10+ production payment integrations delivering zero-defect idempotency for real money movement.</p>
+                </div>
+              </div>
+
+              <div class="milestone-row">
+                <div class="m-metric">92% Cut</div>
+                <div class="m-info">
+                  <h4 class="m-title">Log Volume Reduction</h4>
+                  <p class="m-desc">Dropped production telemetry output from 444M down to 33M lines/day, substantially reducing cloud storage costs.</p>
+                </div>
+              </div>
+
+              <div class="milestone-row">
+                <div class="m-metric">300+</div>
+                <div class="m-info">
+                  <h4 class="m-title">LeetCode DSA Problems Solved</h4>
+                  <p class="m-desc">Strong foundation in algorithmic computation, dynamic programming, and concurrency graphs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="col-half">
+            <header class="col-header">
+              <span class="section-category">Foundations</span>
+              <h2 class="col-title">Academic Background</h2>
+            </header>
+
+            <div class="academic-dossier-card">
+              <div class="acad-header">
+                <h3 class="acad-school">Ramaiah Institute of Technology</h3>
+                <p class="acad-degree">Bachelor of Engineering (B.E.) in Information Science</p>
+                <div class="acad-meta">
+                  <span>2020 – 2024</span>
+                  <span>•</span>
+                  <span>Bangalore, India</span>
+                  <span class="cgpa-tag">CGPA: 9.17 / 10.0</span>
+                </div>
+              </div>
+
+              <div class="acad-coursework-block">
+                <span class="cw-label">Core Computer Science & Engineering Disciplines</span>
+                <div class="cw-list">
+                  <span class="cw-badge">Distributed Systems</span>
+                  <span class="cw-badge">Data Structures & Algorithms</span>
+                  <span class="cw-badge">Database Management (DBMS)</span>
+                  <span class="cw-badge">Operating Systems</span>
+                  <span class="cw-badge">Computer Networks</span>
+                  <span class="cw-badge">Object-Oriented Design</span>
+                </div>
+              </div>
+
+              <blockquote class="acad-quote">
+                “Simplicity is prerequisite for reliability.”
+                <footer>— Edsger W. Dijkstra</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Contact Channels & Ingestion Form -->
+    <section id="contact" class="section border-top">
+      <div class="container contact-max-width">
+        <header class="section-header-cockpit">
+          <div class="section-title-wrap">
+            <span class="section-category">Direct Reachout</span>
+            <h2 class="section-title">Initiate Contact</h2>
+          </div>
+          <p class="section-intro">
+            Open to senior engineering discussions regarding payment infrastructure, distributed systems, and backend development.
+          </p>
+        </header>
+
+        <div class="contact-card-cockpit">
+          <div class="channels-ledger">
+            <div class="ch-entry">
+              <span class="ch-name">Direct Email</span>
+              <div class="ch-action-block">
+                <span class="ch-val" id="emailVal">arkodeepkoley123@gmail.com</span>
+                <button class="ch-copy-btn" id="copyEmailBtn">
+                  <span id="copyBtnLabel">Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="ch-entry">
+              <span class="ch-name">Direct Phone</span>
+              <div class="ch-action-block">
+                <a href="tel:+917478156546" class="ch-link">+91 74781 56546</a>
+              </div>
+            </div>
+
+            <div class="ch-entry">
+              <span class="ch-name">Location</span>
+              <div class="ch-action-block">
+                <span class="ch-val">Bangalore, India (IST / UTC+5:30)</span>
+              </div>
+            </div>
+
+            <div class="ch-entry">
+              <span class="ch-name">GitHub</span>
+              <div class="ch-action-block">
+                <a href="https://github.com/ArkoOf22" target="_blank" rel="noopener noreferrer" class="ch-link">github.com/ArkoOf22</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Validated Ingestion Form with font-size >= 16px to prevent mobile zoom -->
+          <form id="contactForm" class="cockpit-form" novalidate>
+            <div class="form-grid-2">
+              <div class="input-field-group">
+                <label for="senderName" class="field-label">Your Name</label>
+                <input type="text" id="senderName" class="cockpit-input" placeholder="Sundar Pichai" required />
+              </div>
+              <div class="input-field-group">
+                <label for="senderEmail" class="field-label">Your Email</label>
+                <input type="email" id="senderEmail" class="cockpit-input" placeholder="name@domain.com" required />
+              </div>
+            </div>
+
+            <div class="input-field-group">
+              <label for="senderSubject" class="field-label">Subject</label>
+              <input type="text" id="senderSubject" class="cockpit-input" placeholder="Backend Engineer Role / Systems Discussion" required />
+            </div>
+
+            <div class="input-field-group">
+              <label for="senderMessage" class="field-label">Message</label>
+              <textarea id="senderMessage" class="cockpit-textarea" rows="4" placeholder="Hi Arkodeep, I'd like to discuss an opportunity regarding..." required></textarea>
+            </div>
+
+            <button type="submit" id="submitFormBtn" class="btn btn-primary btn-full">
+              <span>Transmit Message</span>
+              <span class="btn-glyph">→</span>
+            </button>
+            <div id="formFeedback" class="form-feedback-text" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container footer-layout">
+      <div class="footer-sign">
+        <span class="f-brand">AK</span>
+        <span>Arkodeep Koley • Software Developer & Backend Systems</span>
+      </div>
+      <div class="footer-meta">
+        <span>© <span id="currentYear"></span> All rights reserved.</span>
+        <a href="#hero" class="to-top-btn">Top of Page ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="main.js"></script>
+</body>
+</html>
