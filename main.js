@@ -1,231 +1,266 @@
 /**
  * ARKODEEP KOLEY — RUNTIME ENGINE
- * Implements the Interactive Idempotency Simulator,
- * Fact-Guard Visualizer, copy channels, and form handling.
+ * Handles cluster tab navigation, ambient lighting,
+ * email clipboard copy, and contact form dispatch.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Footer Year
-  const yearEl = document.getElementById('currentYear');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+  // 1. Current Year
+  const currentYearEl = document.getElementById('currentYear');
+  if (currentYearEl) {
+    currentYearEl.textContent = new Date().getFullYear();
   }
 
   // --------------------------------------------------------------------------
-  // 2. Interactive Distributed Lock & Idempotency Simulator (Hero Centerpiece)
+  // 2. Ambient Cursor Spotlight
   // --------------------------------------------------------------------------
-  const simIssuer = document.getElementById('simIssuer');
-  const simOperation = document.getElementById('simOperation');
-  const codeIssuerVal = document.getElementById('codeIssuerVal');
-  const codeKeyVal = document.getElementById('codeKeyVal');
-  const codeStateVal = document.getElementById('codeStateVal');
-  const simDispatchBtn = document.getElementById('simDispatchBtn');
-  const simLatencyPill = document.getElementById('simLatencyPill');
-  const simLogBox = document.getElementById('simLogBox');
+  const ambientSpotlight = document.getElementById('ambientSpotlight');
+  if (ambientSpotlight && window.matchMedia('(pointer: fine)').matches) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 3;
+    let currentX = mouseX;
+    let currentY = mouseY;
 
-  const idempotencyStore = new Map();
-  let currentKey = createTxHash();
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
 
-  function createTxHash() {
-    const hex = Math.floor(Math.random() * 0xffffffff).toString(16).padStart(8, '0');
-    return `idemp_${hex}`;
-  }
-
-  function getTimestamp() {
-    return new Date().toTimeString().split(' ')[0];
-  }
-
-  function refreshCodePreview() {
-    const issuer = simIssuer ? simIssuer.value : 'AU_BANK';
-    const op = simOperation ? simOperation.value : 'REDEEM';
-
-    if (codeIssuerVal) codeIssuerVal.textContent = `"${issuer}"`;
-    if (codeKeyVal) codeKeyVal.textContent = `"${currentKey}"`;
-    if (codeStateVal) {
-      codeStateVal.textContent = `READY_TO_${op}`;
-      codeStateVal.style.color = 'var(--signal-emerald)';
+    function renderSpotlight() {
+      currentX += (mouseX - currentX) * 0.1;
+      currentY += (mouseY - currentY) * 0.1;
+      ambientSpotlight.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
+      requestAnimationFrame(renderSpotlight);
     }
+    renderSpotlight();
   }
 
-  function pushLog(type, tag, msg) {
-    if (!simLogBox) return;
-    const line = document.createElement('div');
-    line.className = `log-line log-${type}`;
-    line.innerHTML = `<span class="ts">${getTimestamp()}</span> [${tag}] ${msg}`;
-    simLogBox.appendChild(line);
-    simLogBox.scrollTop = simLogBox.scrollHeight;
-  }
+  // --------------------------------------------------------------------------
+  // 3. Navigation & Mobile Drawer
+  // --------------------------------------------------------------------------
+  const proNav = document.getElementById('proNav');
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
 
-  if (simIssuer) {
-    simIssuer.addEventListener('change', () => {
-      currentKey = createTxHash();
-      refreshCodePreview();
-      pushLog('sys', 'CONFIG', `Proxy routing updated for issuer: ${simIssuer.value}`);
-    });
-  }
-
-  if (simOperation) {
-    simOperation.addEventListener('change', () => {
-      currentKey = createTxHash();
-      refreshCodePreview();
-      pushLog('sys', 'SCHEMA', `Transaction mutation set to: ${simOperation.value}`);
-    });
-  }
-
-  if (simDispatchBtn) {
-    simDispatchBtn.addEventListener('click', dispatchTransaction);
-  }
-
-  function dispatchTransaction() {
-    const issuer = simIssuer ? simIssuer.value : 'AU_BANK';
-    const op = simOperation ? simOperation.value : 'REDEEM';
-    const jitter = Math.floor(Math.random() * 15) + 19; // 19ms - 34ms
-
-    // Check if this key was already processed (Demonstrate Idempotency Replay)
-    if (idempotencyStore.has(currentKey)) {
-      pushLog('replay', 'IDEMP_REPLAY', `Key ${currentKey} already committed. Returning cached receipt (Zero balance mutation). Latency: 2ms.`);
-      if (codeStateVal) {
-        codeStateVal.textContent = 'IDEMPOTENCY_REPLAY_CACHED';
-        codeStateVal.style.color = '#60A5FA';
-      }
-      if (simLatencyPill) {
-        simLatencyPill.innerHTML = `<span>Latency:</span> <strong style="color:#60A5FA;">2ms (Cache Hit)</strong>`;
-      }
-      return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      proNav?.classList.add('scrolled');
+    } else {
+      proNav?.classList.remove('scrolled');
     }
+  }, { passive: true });
 
-    // New Transaction Execution
-    simDispatchBtn.disabled = true;
-    simDispatchBtn.style.opacity = '0.6';
-    if (codeStateVal) {
-      codeStateVal.textContent = 'ACQUIRING_REDIS_LOCK...';
-      codeStateVal.style.color = '#F59E0B';
-    }
-
-    setTimeout(() => {
-      idempotencyStore.set(currentKey, { issuer, op, at: Date.now() });
-
-      pushLog(
-        'ok',
-        '200_COMMITTED',
-        `Committed ${op} with ${issuer}. Mutex lock released cleanly. Latency: ${jitter}ms.`
-      );
-
-      if (codeStateVal) {
-        codeStateVal.textContent = 'COMMITTED_IDEMPOTENT_OK';
-        codeStateVal.style.color = 'var(--signal-emerald)';
-      }
-
-      if (simLatencyPill) {
-        simLatencyPill.innerHTML = `<span>P95 Latency:</span> <strong>${jitter}ms</strong>`;
-      }
-
-      simDispatchBtn.disabled = false;
-      simDispatchBtn.style.opacity = '1';
-    }, 360);
-  }
-
-  refreshCodePreview();
-
-  // --------------------------------------------------------------------------
-  // 3. Interactive Fact-Guard Diff Visualizer (JobClaw Card)
-  // --------------------------------------------------------------------------
-  const showRawBtn = document.getElementById('showRawBtn');
-  const showGuardedBtn = document.getElementById('showGuardedBtn');
-  const diffScreen = document.getElementById('diffScreen');
-
-  if (showRawBtn && showGuardedBtn && diffScreen) {
-    showRawBtn.addEventListener('click', () => {
-      showRawBtn.classList.add('active');
-      showGuardedBtn.classList.remove('active');
-      diffScreen.innerHTML = `
-        <div class="diff-row"><span class="diff-tag warning">[UNSAFE]</span> LLM context directly populated with raw PII (risk of hallucinated degrees/phone).</div>
-        <div class="diff-row"><span class="diff-tag warning">[COST SPIKE]</span> Full master prompt evaluated on each iteration ($0.039 per generation).</div>
-        <div class="diff-row"><span class="diff-tag warning">[SILENT FAILURE]</span> HTML-escaped characters corrupt experience requirement parsers undetected.</div>
-        <div class="diff-row"><span class="diff-tag warning">[DATA DROP]</span> Discovery client reported 0 results when one upstream source failed.</div>
-      `;
+  if (menuToggle && mobileDrawer) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileDrawer.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    showGuardedBtn.addEventListener('click', () => {
-      showGuardedBtn.classList.add('active');
-      showRawBtn.classList.remove('active');
-      diffScreen.innerHTML = `
-        <div class="diff-row"><span class="diff-tag verified">[PRESERVED]</span> Candidate master credentials strictly mapped from deterministic store.</div>
-        <div class="diff-row"><span class="diff-tag verified">[ISOLATED]</span> Contact and education data kept completely outside model context token reach.</div>
-        <div class="diff-row"><span class="diff-tag verified">[OPTIMIZED]</span> Cost reduced from $0.039 to $0.0049 per resume via targeted delta prompt engineering.</div>
-        <div class="diff-row"><span class="diff-tag verified">[INTEGRITY]</span> Fixed silent-success parser failures that previously dropped source data undetected.</div>
-      `;
+    drawerLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('open');
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
     });
   }
 
+  // IntersectionObserver for active nav link
+  const sections = document.querySelectorAll('section[id]');
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    },
+    { threshold: 0.25 }
+  );
+
+  sections.forEach((sec) => navObserver.observe(sec));
+
   // --------------------------------------------------------------------------
-  // 4. Direct Channel Copy Action
+  // 4. Production Engineering Cluster Tabs
+  // --------------------------------------------------------------------------
+  const clusterTabs = document.querySelectorAll('.cluster-tab');
+  const clusterPanels = document.querySelectorAll('.cluster-panel');
+
+  clusterTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const targetCluster = tab.getAttribute('data-cluster');
+      if (!targetCluster) return;
+
+      // Update active tab
+      clusterTabs.forEach((t) => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Update active panel
+      clusterPanels.forEach((panel) => {
+        if (panel.id === `panel-${targetCluster}`) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  // 4b. Apple-Style Tech Specs Segment Filter
+  // --------------------------------------------------------------------------
+  const specFilterBtns = document.querySelectorAll('.spec-filter-btn');
+  const specGroups = document.querySelectorAll('.apple-spec-group');
+
+  specFilterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-spec-filter');
+      if (!filter) return;
+
+      specFilterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      specGroups.forEach((group) => {
+        const cat = group.getAttribute('data-spec-cat');
+        if (filter === 'all' || cat === filter || cat === 'all') {
+          group.classList.remove('hidden');
+        } else {
+          group.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // --------------------------------------------------------------------------
+  // 5. 1-Click Email Clipboard Copy
   // --------------------------------------------------------------------------
   const copyEmailBtn = document.getElementById('copyEmailBtn');
-  const emailVal = document.getElementById('emailVal');
   const copyBtnLabel = document.getElementById('copyBtnLabel');
+  const emailVal = document.getElementById('emailVal');
 
-  if (copyEmailBtn && emailVal && copyBtnLabel) {
+  if (copyEmailBtn && emailVal) {
     copyEmailBtn.addEventListener('click', async () => {
-      const email = emailVal.textContent.trim();
+      const emailText = emailVal.textContent.trim();
       try {
-        await navigator.clipboard.writeText(email);
-        copyBtnLabel.textContent = 'Copied';
-        copyEmailBtn.style.borderColor = 'var(--signal-emerald)';
-        copyEmailBtn.style.color = 'var(--signal-emerald)';
+        await navigator.clipboard.writeText(emailText);
+        if (copyBtnLabel) copyBtnLabel.textContent = 'Copied!';
+        copyEmailBtn.style.background = 'rgba(48, 209, 88, 0.2)';
+        copyEmailBtn.style.borderColor = 'var(--accent-emerald)';
+
         setTimeout(() => {
-          copyBtnLabel.textContent = 'Copy';
+          if (copyBtnLabel) copyBtnLabel.textContent = 'Copy';
+          copyEmailBtn.style.background = '';
           copyEmailBtn.style.borderColor = '';
-          copyEmailBtn.style.color = '';
-        }, 2000);
+        }, 2200);
       } catch (err) {
-        copyBtnLabel.textContent = 'Press Ctrl+C';
+        window.prompt('Copy email:', emailText);
       }
     });
   }
 
   // --------------------------------------------------------------------------
-  // 5. Contact Ingestion Form Handling
+  // 6. Real Contact Form Transmission (FormSubmit.co + Mailto Fallback)
   // --------------------------------------------------------------------------
   const contactForm = document.getElementById('contactForm');
-  const submitFormBtn = document.getElementById('submitFormBtn');
   const formFeedback = document.getElementById('formFeedback');
+  const submitFormBtn = document.getElementById('submitFormBtn');
+  const directMailtoLink = document.getElementById('directMailtoLink');
 
-  if (contactForm && submitFormBtn && formFeedback) {
-    contactForm.addEventListener('submit', (e) => {
+  // Dynamically update mailto link as user types
+  function updateMailtoHref() {
+    if (!directMailtoLink) return;
+    const name = document.getElementById('senderName')?.value.trim() || '';
+    const subject = document.getElementById('senderSubject')?.value.trim() || 'Portfolio Inquiry';
+    const message = document.getElementById('senderMessage')?.value.trim() || '';
+    const body = `Hi Arkodeep,\n\n${message}\n\nBest regards,\n${name}`;
+    directMailtoLink.href = `mailto:arkodeepkoley123@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  ['senderName', 'senderSubject', 'senderMessage'].forEach((fieldId) => {
+    document.getElementById(fieldId)?.addEventListener('input', updateMailtoHref);
+  });
+
+  if (contactForm && formFeedback && submitFormBtn) {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('senderName').value.trim();
-      const email = document.getElementById('senderEmail').value.trim();
-      const subject = document.getElementById('senderSubject').value.trim();
-      const message = document.getElementById('senderMessage').value.trim();
+      const name = document.getElementById('senderName')?.value.trim();
+      const email = document.getElementById('senderEmail')?.value.trim();
+      const subject = document.getElementById('senderSubject')?.value.trim();
+      const message = document.getElementById('senderMessage')?.value.trim();
+
+      if (!name || !email || !message) {
+        formFeedback.textContent = 'Please fill out all required fields.';
+        formFeedback.className = 'form-feedback error';
+        return;
+      }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!name || !email || !subject || !message) {
-        formFeedback.textContent = 'Please fill out all required fields.';
-        formFeedback.style.color = '#F87171';
-        return;
-      }
-
       if (!emailRegex.test(email)) {
         formFeedback.textContent = 'Please enter a valid email address.';
-        formFeedback.style.color = '#F87171';
+        formFeedback.className = 'form-feedback error';
         return;
       }
 
-      // Valid - simulate transmission
       submitFormBtn.disabled = true;
-      submitFormBtn.innerHTML = `<span>Transmitting to Queue...</span>`;
+      submitFormBtn.innerHTML = '<span>Sending to arkodeepkoley123@gmail.com...</span>';
       formFeedback.textContent = '';
+      formFeedback.className = 'form-feedback';
 
-      setTimeout(() => {
-        contactForm.reset();
+      try {
+        const payload = {
+          name: name,
+          email: email,
+          _subject: `[Portfolio Contact] ${subject || 'New Message from ' + name}`,
+          message: message,
+          _template: 'table',
+          _captcha: 'false'
+        };
+
+        const response = await fetch('https://formsubmit.co/ajax/arkodeepkoley123@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (response.ok && (data.success === 'true' || data.success === true || data.message)) {
+          submitFormBtn.disabled = false;
+          submitFormBtn.innerHTML = '<span>Message Delivered</span> <span class="arrow-icon">✓</span>';
+          formFeedback.textContent = `Thank you, ${name}! Your email was dispatched directly to Arkodeep's Gmail inbox.`;
+          formFeedback.className = 'form-feedback success';
+          contactForm.reset();
+          updateMailtoHref();
+
+          setTimeout(() => {
+            submitFormBtn.innerHTML = '<span>Transmit Message to Gmail</span> <span class="arrow-icon">→</span>';
+          }, 5000);
+        } else {
+          throw new Error(data.message || 'Server error');
+        }
+      } catch (err) {
+        console.warn('FormSubmit AJAX dispatch encountered an error, falling back to mailto:', err);
+        // Fallback: trigger default mail client with prefilled mailto
+        const mailtoUrl = `mailto:arkodeepkoley123@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Hi Arkodeep,\n\n${message}\n\nFrom: ${name} (${email})`)}`;
+        window.location.href = mailtoUrl;
+
         submitFormBtn.disabled = false;
-        submitFormBtn.innerHTML = `<span>Transmit Message</span> <span class="btn-glyph">→</span>`;
-        formFeedback.textContent = 'Message queued successfully. Arkodeep will review and respond shortly.';
-        formFeedback.style.color = 'var(--signal-emerald)';
-      }, 900);
+        submitFormBtn.innerHTML = '<span>Opened in Mail App</span> <span class="arrow-icon">↗</span>';
+        formFeedback.textContent = `Triggered your mail client to send directly to arkodeepkoley123@gmail.com. Or copy the email directly above.`;
+        formFeedback.className = 'form-feedback success';
+      }
     });
   }
 });
