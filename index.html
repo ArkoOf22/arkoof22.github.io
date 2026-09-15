@@ -1,50 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" class="apple-experience">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arkodeep Koley — Software Developer • Backend Systems</title>
-  <meta name="description" content="Portfolio of Arkodeep Koley. Software Developer & Backend Engineer building high-scale payment infrastructure, distributed concurrency locks, and idempotent systems in Go & Java." />
-  <meta name="keywords" content="Arkodeep Koley, Software Developer, Backend Developer, Apple Design, Payment Infrastructure, Go, Java, Distributed Systems, Twid, Maersk" />
+  <title>Arkodeep Koley — Software Developer • Backend & Distributed Systems</title>
+  <meta name="description" content="Portfolio of Arkodeep Koley. Software Developer specializing in high-scale payment infrastructure, distributed idempotency, multi-bank integrations, and fault-tolerant backend systems in Go & Java." />
+  <meta name="keywords" content="Arkodeep Koley, Software Developer, Backend Developer, Go, Golang, Java, Distributed Systems, Idempotency, Payment Systems, Twid, Maersk, JobClaw" />
 
-  <!-- Apple-Style Modern Typography: SF Pro style with Geist & Plus Jakarta Sans -->
+  <!-- Modern Pro Typography: Geist & Geist Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Devicon CDN -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="index.css" />
 
-  <!-- Favicon SVG -->
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23000000'/><text x='50' y='58' font-family='-apple-system, sans-serif' font-weight='800' font-size='44' text-anchor='middle' dominant-baseline='central' fill='%232997ff'>AK</text></svg>" type="image/svg+xml" />
 </head>
 <body class="dark-canvas">
 
-  <!-- Ambient Light Orbs (Apple Keynote Style Subtle Lighting) -->
+  <!-- Ambient Lighting Spotlight -->
   <div class="ambient-spotlight" id="ambientSpotlight" aria-hidden="true"></div>
 
-  <!-- Apple-Style Global Navigation -->
-  <header class="apple-nav" id="appleNav">
+  <!-- Global Sticky Navigation Bar -->
+  <header class="pro-nav" id="proNav">
     <div class="nav-content">
       <a href="#hero" class="nav-brand" aria-label="Arkodeep Koley">
         <span class="brand-monogram">AK</span>
-        <span class="brand-label">Arkodeep Koley</span>
+        <span class="brand-name">Arkodeep Koley</span>
       </a>
 
-      <nav class="nav-links" aria-label="Primary Navigation">
+      <nav class="nav-links" aria-label="Main Navigation">
         <a href="#hero" class="nav-link">Overview</a>
-        <a href="#silicon" class="nav-link">Architecture</a>
-        <a href="#benchmarks" class="nav-link">Benchmarks</a>
+        <a href="#impact" class="nav-link">Scale & Impact</a>
+        <a href="#systems" class="nav-link">Production Work</a>
+        <a href="#postmortems" class="nav-link">Bugs Solved</a>
+        <a href="#jobclaw" class="nav-link">JobClaw</a>
         <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Deep Dives</a>
-        <a href="#specs" class="nav-link">Tech Specs</a>
+        <a href="#skills" class="nav-link">Tech Specs</a>
       </nav>
 
       <div class="nav-cta-wrap">
-        <a href="#contact" class="apple-pill-btn nav-cta">Get in touch</a>
+        <a href="#contact" class="apple-pill-btn nav-cta">Get in Touch</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">
           <span></span>
           <span></span>
@@ -54,564 +52,808 @@
   </header>
 
   <!-- Mobile Drawer -->
-  <div class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
     <div class="drawer-inner">
       <a href="#hero" class="drawer-link">Overview</a>
-      <a href="#silicon" class="drawer-link">Architecture</a>
-      <a href="#benchmarks" class="drawer-link">Benchmarks</a>
+      <a href="#impact" class="drawer-link">Scale & Impact</a>
+      <a href="#systems" class="drawer-link">Production Work</a>
+      <a href="#postmortems" class="drawer-link">Bugs Solved</a>
+      <a href="#jobclaw" class="drawer-link">JobClaw</a>
       <a href="#experience" class="drawer-link">Experience</a>
-      <a href="#projects" class="drawer-link">Deep Dives</a>
-      <a href="#specs" class="drawer-link">Tech Specs</a>
+      <a href="#skills" class="drawer-link">Tech Specs</a>
       <a href="#contact" class="drawer-link highlight">Contact Arkodeep</a>
     </div>
   </div>
 
   <main>
-    <!-- Section 1: Apple-Style Hero Reveal -->
+    <!-- SECTION 1: HERO STAGE -->
     <section id="hero" class="hero-stage">
       <div class="container hero-container">
-        <!-- Luminous Eyebrow Ribbon -->
-        <div class="hero-ribbon">
-          <span class="ribbon-glow-dot"></span>
-          <span class="ribbon-text">Software Developer • Payment Infrastructure & Distributed Systems</span>
+        <!-- Eyebrow Ribbon -->
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">Software Developer • Payment Infrastructure & Distributed Systems</span>
         </div>
 
-        <!-- Titanium Hero Headline -->
+        <!-- Hero Headline -->
         <h1 class="hero-headline">
-          <span class="headline-primary">Pro performance.</span>
-          <span class="headline-secondary">Engineered for zero failure.</span>
+          <span class="headline-gradient">Architecting fault-tolerant backend systems</span>
+          <span class="headline-sub">where correctness is non-negotiable.</span>
         </h1>
 
         <!-- Subtitle -->
         <p class="hero-tagline">
-          Building high-scale payment infrastructure, distributed concurrency locks,
-          and idempotent APIs in Go and Java for real-money movement across 18 banking institutions.
+          I'm <strong>Arkodeep Koley</strong>, a Software Developer at <strong>Twid</strong> building high-scale payment gateways, distributed idempotency controls, and retry-safe architectures across 18 banking institutions moving ₹40+ Cr in real transaction volume.
         </p>
 
-        <!-- CTA Cluster -->
-        <div class="hero-cta-cluster">
-          <a href="#silicon" class="apple-pill-btn btn-primary">
-            <span>Explore Architecture</span>
-            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <a href="#systems" class="apple-pill-btn btn-primary">
+            <span>Explore Production Work</span>
+            <span class="arrow-icon">→</span>
           </a>
-          <a href="#experience" class="apple-ghost-btn">
-            <span>View Experience Dossier</span>
-            <span class="arrow-glyph">›</span>
+          <a href="#postmortems" class="apple-ghost-btn">
+            <span>Read Engineering Post-Mortems</span>
+            <span class="arrow-icon">›</span>
           </a>
         </div>
 
-        <!-- Quick Spec Ribbon -->
-        <div class="quick-spec-bar">
-          <div class="spec-node">
-            <span class="spec-label">Current Role</span>
-            <span class="spec-val">SDE @ Twid</span>
+        <!-- Quick Summary Bar -->
+        <div class="hero-summary-strip">
+          <div class="summary-item">
+            <span class="s-title">Current Role</span>
+            <span class="s-val">Software Developer @ Twid</span>
           </div>
-          <div class="spec-sep"></div>
-          <div class="spec-node">
-            <span class="spec-label">Scale Transacted</span>
-            <span class="spec-val">₹40+ Cr GMV</span>
+          <div class="summary-divider"></div>
+          <div class="summary-item">
+            <span class="s-title">Primary Stack</span>
+            <span class="s-val">Go (Golang) • Java • Distributed Systems</span>
           </div>
-          <div class="spec-sep"></div>
-          <div class="spec-node">
-            <span class="spec-label">Telemetry Optimization</span>
-            <span class="spec-val">-92% Log Noise</span>
+          <div class="summary-divider"></div>
+          <div class="summary-item">
+            <span class="s-title">Scale Transacted</span>
+            <span class="s-val">₹40+ Cr GMV Backing</span>
           </div>
-          <div class="spec-sep"></div>
-          <div class="spec-node">
-            <span class="spec-label">Location</span>
-            <span class="spec-val">Bangalore, India</span>
+          <div class="summary-divider"></div>
+          <div class="summary-item">
+            <span class="s-title">Location</span>
+            <span class="s-val">Bangalore, India</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Interactive Backend Silicon Architecture (The Core Visual Centerpiece) -->
-    <section id="silicon" class="silicon-section border-top">
+    <!-- SECTION 2: QUANTIFIABLE PRODUCTION IMPACT (BENTO METRICS) -->
+    <section id="impact" class="impact-section border-top">
       <div class="container">
-        <header class="section-center-head">
-          <span class="apple-eyebrow">Backend Die Architecture</span>
-          <h2 class="apple-headline">AK-1 System Engine.</h2>
-          <p class="apple-subhead">
-            A high-throughput distributed topology split across four deployable microservices.
-            Click any core to inspect live telemetry and concurrency mechanisms.
+        <header class="section-head">
+          <span class="section-eyebrow">Engineering Scale</span>
+          <h2 class="section-title">Measurable impact in production.</h2>
+          <p class="section-desc">
+            Directly accountable for high-stakes financial throughput, latency reduction, and infrastructure cost efficiency.
           </p>
         </header>
 
-        <!-- Interactive Chip Die Representation -->
-        <div class="chip-die-container">
-          <!-- The Glowing Silicon Motherboard -->
-          <div class="silicon-die" id="siliconDie">
-            <canvas id="circuitCanvas" class="circuit-canvas" aria-hidden="true"></canvas>
+        <div class="bento-grid">
+          <!-- Card 1: GMV -->
+          <div class="bento-card bento-hero">
+            <div class="bento-glow"></div>
+            <span class="metric-num grad-silver">₹40+ Cr</span>
+            <h3 class="metric-heading">Gross Merchandise Value</h3>
+            <p class="metric-copy">
+              Production transactional volume supported across 10+ payment integrations with zero double-spend anomalies or balance drift.
+            </p>
+            <div class="metric-tag">Idempotent Money Movement</div>
+          </div>
 
-            <div class="die-inner">
-              <div class="die-header">
-                <div class="die-branding">
-                  <span class="die-logo">AK-1</span>
-                  <span class="die-sub">PRO DISTRIBUTED ENGINE • 4 PODS</span>
-                </div>
-                <div class="die-live-signal">
-                  <span class="signal-pulse"></span>
-                  <span>ALL CORES OPERATIONAL</span>
-                </div>
+          <!-- Card 2: Issuers -->
+          <div class="bento-card">
+            <span class="metric-num grad-blue">18</span>
+            <h3 class="metric-heading">Banking & Loyalty Issuers</h3>
+            <p class="metric-copy">
+              Integrated & maintained partners including AU Bank, Kotak, RBL, CRED, PopClub, and BOBCard under a unified Go proxy.
+            </p>
+            <div class="metric-tag">Unified Gateway Proxy</div>
+          </div>
+
+          <!-- Card 3: Log Volume Cut -->
+          <div class="bento-card">
+            <span class="metric-num grad-emerald">92%</span>
+            <h3 class="metric-heading">Daily Log Noise Slashed</h3>
+            <p class="metric-copy">
+              Curtailed production logs from 444M down to 33M lines/day (240GB down to 53GB) via granular issuer/brand/customer tier controls.
+            </p>
+            <div class="metric-tag">Cloud Cost Optimization</div>
+          </div>
+
+          <!-- Card 4: Java Heap Memory -->
+          <div class="bento-card">
+            <span class="metric-num grad-cyan">50%</span>
+            <h3 class="metric-heading">JVM Heap Allocation Cut</h3>
+            <p class="metric-copy">
+              Profiled memory hotspots with VisualVM at A.P. Moller – Maersk, cutting runtime consumption from ~2.4GB to ~1.2GB on Spring Boot.
+            </p>
+            <div class="metric-tag">Maersk Logistics Microservices</div>
+          </div>
+
+          <!-- Card 5: Onboarding Velocity -->
+          <div class="bento-card">
+            <span class="metric-num grad-amber">1.5 Days</span>
+            <h3 class="metric-heading">Partner Onboarding Velocity</h3>
+            <p class="metric-copy">
+              Replaced fragile per-issuer hardcoded integrations with a config-driven proxy, collapsing 14-day cycles down to 36 hours.
+            </p>
+            <div class="metric-tag">Config-Driven Architecture</div>
+          </div>
+
+          <!-- Card 6: Test Ratio & Hygiene -->
+          <div class="bento-card">
+            <span class="metric-num grad-purple">2,500+</span>
+            <h3 class="metric-heading">Production Test Lines Added</h3>
+            <p class="metric-copy">
+              Authored over 2,500 lines of Go unit/integration tests across RBL, AU Bank, and BOBCard; 0.82 test-to-code ratio in JobClaw (243 tests).
+            </p>
+            <div class="metric-tag">Test-Driven Resilience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: PRODUCTION WORK & ARCHITECTURAL CLUSTERS (INTERACTIVE DOSSIER) -->
+    <section id="systems" class="systems-section border-top">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-eyebrow">Production Portfolio</span>
+          <h2 class="section-title">Core engineering accomplishments.</h2>
+          <p class="section-desc">
+            Granular technical tasks delivered at Twid, organized by operational engineering discipline.
+          </p>
+        </header>
+
+        <!-- Category Filter Tabs -->
+        <div class="cluster-tabs" role="tablist">
+          <button class="cluster-tab active" data-cluster="idempotency" role="tab">
+            <span class="tab-icon">⚡</span>
+            <span>Idempotency & Money Movement</span>
+          </button>
+          <button class="cluster-tab" data-cluster="integrations" role="tab">
+            <span class="tab-icon">🏦</span>
+            <span>Multi-Bank Integrations</span>
+          </button>
+          <button class="cluster-tab" data-cluster="caching" role="tab">
+            <span class="tab-icon">🚀</span>
+            <span>Performance & Caching</span>
+          </button>
+          <button class="cluster-tab" data-cluster="security" role="tab">
+            <span class="tab-icon">🔒</span>
+            <span>Security & PII Integrity</span>
+          </button>
+          <button class="cluster-tab" data-cluster="observability" role="tab">
+            <span class="tab-icon">📊</span>
+            <span>Observability & Testing</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Cluster Content Panels -->
+        <div class="cluster-panels">
+
+          <!-- PANEL 1: IDEMPOTENCY & MONEY MOVEMENT -->
+          <div class="cluster-panel active" id="panel-idempotency">
+            <div class="cluster-intro-card">
+              <div class="ci-header">
+                <span class="ci-badge">Highest-Impact Production Cluster</span>
+                <h3 class="ci-title">Zero-Drift Idempotency, Retry Resilience & Double-Debit Prevention</h3>
               </div>
+              <p class="ci-desc">
+                When transacting real money across third-party banking APIs, transport timeouts are inevitable. The challenge is ensuring that network retries never produce duplicate charges, double holds, or lost-update race conditions.
+              </p>
+            </div>
 
-              <!-- Silicon Cores Grid -->
-              <div class="die-cores-grid">
-                <!-- Core 1: Issuer Routing Core -->
-                <button class="die-core active" data-core-id="issuer-proxy">
-                  <div class="core-tag">ROUTING ENGINE</div>
-                  <h4 class="core-name">18x Banking Proxy Core</h4>
-                  <p class="core-spec">AU Bank • Kotak • RBL • CRED</p>
-                  <div class="core-metric">1.5-Day Onboarding</div>
-                </button>
+            <div class="tasks-grid">
+              <!-- Task 1: RBL Idempotent Redemption -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">cd0df30a</span>
+                  <span class="task-type">Reliability Architecture</span>
+                </div>
+                <h4 class="task-title">RBL Idempotent Redemption Tracking & Retry Resilience</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">The Problem</span>
+                    <p>RBL redemption followed a two-step <code>Block → Redeem</code> flow. A network timeout mid-flow left points locked in hold with no safe way to retry. Upstream retries generated fresh timestamped client transaction IDs, causing RBL to treat them as brand-new redemptions (duplicate holds and customer double-charge risk).</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Engineered Solution</span>
+                    <ul class="tb-list">
+                      <li>Engineered <code>stableRBLClientTxnID()</code> derived deterministically from <code>billTxnID_precheckoutID</code>, allowing RBL's native deduplication on <code>(clientTransactionId + Idempotency-Key)</code> to engage across network retries.</li>
+                      <li>Built <code>isUnknownRBLRedeemOutcome()</code> to decouple transport ambiguity (<code>context.DeadlineExceeded</code>, <code>HYSTRIX: TIMEOUT</code>, <code>504 Gateway Timeout</code>) from definite rejections. Ambiguous calls stay <code>IN_PROGRESS</code> (hold maintained); definite failures record <code>FAILED</code> and trigger best-effort release.</li>
+                      <li>Implemented resume logic: prior <code>SUCCESSFUL</code> state short-circuits without outbound calls; <code>IN_PROGRESS</code> skips the Block step and directly re-redeems the stored <code>blockResponseId</code>.</li>
+                      <li>Routed transient errors to <code>RetriableIssuerApiError(canRetry=true)</code> for automated asynchronous background retry instead of hard user-facing failures.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">425+ / 104− lines • 343 test lines</span>
+                  <span class="tf-tech">Go • Concurrency • Distributed State</span>
+                </div>
+              </article>
 
-                <!-- Core 2: Concurrency & Lock Mesh -->
-                <button class="die-core" data-core-id="concurrency-mesh">
-                  <div class="core-tag">CONCURRENCY FABRIC</div>
-                  <h4 class="core-name">Distributed Mutex Mesh</h4>
-                  <p class="core-spec">Redis Key Leasing • Zero Double-Spend</p>
-                  <div class="core-metric">P95 &lt; 28ms</div>
-                </button>
+              <!-- Task 2: RBL Idempotent Refund -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">fd9dec15</span>
+                  <span class="task-type">Concurrency & Double-Debit Fix</span>
+                </div>
+                <h4 class="task-title">RBL Idempotent Refund & Atomic Counter Update</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">The Problem</span>
+                    <p>Cron-driven refund re-drives transmitted timestamped refund request IDs, causing RBL to execute duplicate refunds. Concurrently on our side, each redrive inserted an additional reversal row and re-incremented <code>total_refund_points</code> via unsafe read-modify-write struct cycles.</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Engineered Solution</span>
+                    <ul class="tb-list">
+                      <li>Stabilized <code>refundRequestID</code> to the canonical Twid refund ID, triggering RBL's native code <code>2012</code> (already processed) instead of debiting again.</li>
+                      <li>Engineered <code>ErrRefundAlreadyProcessed</code> sentinel and defensive parsing across raw response payloads (handling untyped error arrays) to treat <code>2012</code> as verified success.</li>
+                      <li>Rewrote <code>SaveExternalBrandPointsRefundDetails</code> into a single atomic GORM transaction with check-then-insert deduplication on <code>(bill_transaction_id, refund_request_id)</code>.</li>
+                      <li>Replaced read-modify-write counters with database-level atomic expression <code>gorm.Expr("total_refund_points + ?")</code>, completely eliminating lost-update race conditions.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">291+ / 37− lines • GORM Atomic</span>
+                  <span class="tf-tech">Go • PostgreSQL • Race Elimination</span>
+                </div>
+              </article>
 
-                <!-- Core 3: Telemetry Filter Platform -->
-                <button class="die-core" data-core-id="telemetry-core">
-                  <div class="core-tag">TELEMETRY ACCELERATOR</div>
-                  <h4 class="core-name">Log Compression Core</h4>
-                  <p class="core-spec">444M → 33M lines/day (240GB → 53GB)</p>
-                  <div class="core-metric">92% Noise Reduction</div>
-                </button>
+              <!-- Task 3: Cache Invalidation & DB State -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">f7b87c81 & 49924ea6</span>
+                  <span class="task-type">Correctness & State Integrity</span>
+                </div>
+                <h4 class="task-title">Eligibility Cache Invalidation & Explicit DB Error Handling</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">The Problem</span>
+                    <p>After a successful redemption, the customer's card-level eligibility points cache remained stale, causing pre-redemption balances to display. Additionally, database connection drops were indistinguishable from "record not found," which silently broke replay verification.</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Engineered Solution</span>
+                    <ul class="tb-list">
+                      <li>Engineered <code>DeleteEligibilityPointsCheckBrandCardCache</code> and wired it into both the short-circuit cache hit path and the live confirmation flow.</li>
+                      <li>Strictly separated database connection/query failures from missing rows (returning explicit <code>DatabaseError</code> rather than proceeding with unverified state).</li>
+                      <li>Validated <code>r.RefundRequestID > 0</code> before any outbound API call to prevent negative or zero IDs from collapsing distinct refunds onto a shared idempotency key.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">215+ lines • Cache Invalidation</span>
+                  <span class="tf-tech">Redis • Go • Data Integrity</span>
+                </div>
+              </article>
+            </div>
+          </div>
 
-                <!-- Core 4: Fact-Guard AI Engine -->
-                <button class="die-core" data-core-id="fact-guard">
-                  <div class="core-tag">AI INTEGRITY COPROCESSOR</div>
-                  <h4 class="core-name">Fact-Guard Pipeline</h4>
-                  <p class="core-spec">Deterministic Resume Verification</p>
-                  <div class="core-metric">~87% Cost Cut ($0.0049)</div>
-                </button>
+          <!-- PANEL 2: MULTI-BANK INTEGRATIONS -->
+          <div class="cluster-panel" id="panel-integrations">
+            <div class="cluster-intro-card">
+              <div class="ci-header">
+                <span class="ci-badge">Banking Infrastructure</span>
+                <h3 class="ci-title">18 Banking Institutions Unified Under Config-Driven Go Microservices</h3>
               </div>
+              <p class="ci-desc">
+                Architected and shipped end-to-end partner integrations and crypto clients for Tier-1 banks, handling bespoke wire protocols, AES-GCM encryption, and multi-tenant account mappings.
+              </p>
+            </div>
 
-              <div class="die-footer">
-                <span class="die-footer-note">Architected in Go (Golang) & Java • High-Throughput Event-Driven IPC</span>
-                <span class="die-footer-metric">₹40+ Cr GMV Backing</span>
+            <div class="tasks-grid">
+              <!-- RBL Integration -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">3b4ef853</span>
+                  <span class="task-type">Full Gateway Integration</span>
+                </div>
+                <h4 class="task-title">RBL Banking Loyalty Engine Integration</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Architecture</span>
+                    <p>Built complete wire client handling balance inquiry, block, redeem, refund, release, and status verification. Implemented bespoke cryptographic request signing, typed request/response contracts, adapter layer, factory registration, and ECS production task definitions across 26 files.</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Resilience Engineering</span>
+                    <p>Resolved edge cases like RBL error <code>2003</code> ("cards associated with client not found") by branching on brand mapping existence: maintaining <code>CustomerStatus: 1</code> so transient partner glitches don't permanently de-link active users.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">1,836+ lines • 26 files</span>
+                  <span class="tf-tech">Go • AES Crypto • ECS Task Defs</span>
+                </div>
+              </article>
+
+              <!-- AU Bank Integration -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">220b3a8d & 805538e2</span>
+                  <span class="task-type">Cryptographic Wire Client & Integrity</span>
+                </div>
+                <h4 class="task-title">AU Small Finance Bank Integration & Multi-Reward Mapping</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Architecture</span>
+                    <p>Developed full <code>issuer_integration/aubank</code> client with authenticated token negotiation, account lookup, debit, reverse, and AES-GCM payload encryption with automated test suites.</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Data Integrity Fix</span>
+                    <p>Discovered and resolved a critical collision bug: mappings were initially keyed on <code>accountId</code>, causing multiple reward accounts under one bank account to overwrite each other (last-write-wins). Re-keyed mappings to <code>rewardsAccountId</code> with strict skip-and-warn guards for empty keys.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">1,540+ lines • AES-GCM</span>
+                  <span class="tf-tech">Go • Cryptography • Data Mapping</span>
+                </div>
+              </article>
+
+              <!-- PopClub & BOBCard -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">PopClub & BOBCard Series</span>
+                  <span class="task-type">Integration Hardening</span>
+                </div>
+                <h4 class="task-title">PopClub, BOBCard & SalarySe Partner Pipelines</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Key Interventions</span>
+                    <ul class="tb-list">
+                      <li><strong>PopClub Client (65e4e0bb):</strong> Partner API was returning <code>nil error</code> on HTTP failures, disguising outages as successes. Rewrote response parsing to bubble errors upstream and restructured points fetching to short-circuit on cache hits.</li>
+                      <li><strong>BOBCard (5e36a349):</strong> Fixed transient failure recording where rate limits were being written as permanent "customer not linked." Ensured only confirmed status <code>0</code> with API success persists negative states.</li>
+                      <li><strong>SalarySe (f73cfe91):</strong> Shipped 369-line adapter for employee reward accruals and redemptions.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">1,200+ lines • Multi-Partner</span>
+                  <span class="tf-tech">Go • API Shakeout • ECS Env Vars</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- PANEL 3: PERFORMANCE & CACHING -->
+          <div class="cluster-panel" id="panel-caching">
+            <div class="cluster-intro-card">
+              <div class="ci-header">
+                <span class="ci-badge">High-Throughput Optimization</span>
+                <h3 class="ci-title">Tiered Caching, Latency Sashing & Hot-Path Efficiency</h3>
+              </div>
+              <p class="ci-desc">
+                High-scale payment gateways must respond in milliseconds. Profiling, eliminating discarded round-trips, and hierarchical Redis caching were key to cutting P95 response times.
+              </p>
+            </div>
+
+            <div class="tasks-grid">
+              <!-- Caching -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">80a1281c</span>
+                  <span class="task-type">Tiered Cache Architecture</span>
+                </div>
+                <h4 class="task-title">Card-Level Points Cache with Fallback Hierarchy</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">The Problem</span>
+                    <p>Multiple payment cards under a single user/brand were sharing a single cache entry, causing stale point balances across distinct physical cards.</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Engineered Solution</span>
+                    <p>Designed a multi-tier fallback key scheme: <code>card-level (mapping ID) → brand-level → customer-level → legacy key → live fetch</code>. Ensured proper per-card granularity while preserving backward compatibility for services writing legacy keys.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">192+ / 32− lines • Redis</span>
+                  <span class="tf-tech">Go • Redis • Hierarchical Keys</span>
+                </div>
+              </article>
+
+              <!-- Latency Cut -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">f4bb7b87</span>
+                  <span class="task-type">Critical Path Latency</span>
+                </div>
+                <h4 class="task-title">Eliminated 1.7s Synchronous Discarded Round-Trip</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">The Problem</span>
+                    <p>A deferred best-effort <code>TxnStatus</code> inquiry was running synchronously immediately before <code>RedeemPoints</code> returned, and its result was discarded by the caller.</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Engineered Solution</span>
+                    <p>Identified and excised the blocking deferred call from the synchronous critical path. Removed a full 1.7-second round-trip against a 5-second upstream timeout budget, dramatically reducing timeout-induced retries.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">Critical Latency Cut</span>
+                  <span class="tf-tech">Go • Profiling • Network Optimization</span>
+                </div>
+              </article>
+
+              <!-- Redis Error vs Nil -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">f482b7a5 & 555d6256</span>
+                  <span class="task-type">Resilience & Database Footprint</span>
+                </div>
+                <h4 class="task-title">Redis Outage Isolation & Query Narrowing</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Redis Resilience</span>
+                    <p>Introduced <code>isCacheMiss()</code> to distinguish <code>redis.Nil</code> (benign key absence) from genuine network/connection errors, preventing Redis glitches from being misinterpreted as "customer has 0 points."</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Query Optimization</span>
+                    <p>Replaced wildcard <code>SELECT *</code> with 8 explicit columns on high-frequency <code>c_issuer_imports</code> lookups, reducing network buffer allocations on hot paths.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">SQL & Redis Hardening</span>
+                  <span class="tf-tech">PostgreSQL • Redis • Memory Efficiency</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- PANEL 4: SECURITY & PII INTEGRITY -->
+          <div class="cluster-panel" id="panel-security">
+            <div class="cluster-intro-card">
+              <div class="ci-header">
+                <span class="ci-badge">Data Privacy & Security</span>
+                <h3 class="ci-title">Cryptographic PII Hashing, Salt Management & Cache Bug Fixes</h3>
+              </div>
+              <p class="ci-desc">
+                Handling financial customer identifiers requires strict adherence to security boundaries, environment-specific secret injection, and non-mutating data normalization.
+              </p>
+            </div>
+
+            <div class="tasks-grid">
+              <!-- Salted Mobile Hash -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">5cf48d8e & 26c9b291</span>
+                  <span class="task-type">PII Protection & Call Gating</span>
+                </div>
+                <h4 class="task-title">Salted Mobile Hashing & Outbound Call Elimination</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Architecture</span>
+                    <p>Implemented <code>CheckCustomerExists</code> matching SHA-256 mobile hashes against banking imports before calling outbound APIs. Injected <code>MobileHashSalt</code> via AWS SSM Parameter Store across all ECS task definitions, making the hashing function fail-closed (errors out if salt is absent rather than writing unsalted PII).</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">Business Value</span>
+                    <p>Completely prevented unnecessary, expensive outbound third-party banking API calls for customers who do not exist in the partner's roster.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">190+ lines • AWS SSM</span>
+                  <span class="tf-tech">Go • SHA-256 • Cryptography</span>
+                </div>
+              </article>
+
+              <!-- In-Place Mutation Bug Fix -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">5aac7471</span>
+                  <span class="task-type">High-Impact Bug Fix</span>
+                </div>
+                <h4 class="task-title">Fixed In-Place Mobile Mutation & Phantom Cache Writes</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">The Silent Bug</span>
+                    <p>An in-place mutation <code>mobile = "91" + mobile</code> permanently altered the local variable. Consequently, every subsequent Redis cache write and DB write used the 91-prefixed format. However, consumer services (<code>twid_api</code>) queried keys using plain 10-digit mobile numbers — meaning RBL was writing balances to phantom cluster keys that were never read.</p>
+                  </div>
+                  <div class="tb-item">
+                    <span class="tb-label">The Fix</span>
+                    <p>Introduced an isolated <code>apiMobile</code> strictly for the outbound HTTP envelope, preserving pristine 10-digit customer identifiers for all storage and cache keys.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">Small Diff, Huge Blast Radius</span>
+                  <span class="tf-tech">Go • Redis • Data Integrity</span>
+                </div>
+              </article>
+
+              <!-- AU Bank SFTP -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">0efd96d8 & 40304ac6</span>
+                  <span class="task-type">Multi-Tenant Secret Management</span>
+                </div>
+                <h4 class="task-title">SFTP Customer Check & Multi-Tenant Brand Salts</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Engineering</span>
+                    <p>Replaced live AU Bank HTTP existence calls with local salted SHA-256 checks against imported files, gated behind dynamic settings flags. Refactored environment-wide salts into per-brand parameter tables (<code>c_brand_params</code>) to enable multi-tenant isolation across banking partners.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">277+ lines • Multi-Tenant</span>
+                  <span class="tf-tech">AWS ECS • Salt Isolation</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- PANEL 5: OBSERVABILITY & TESTING -->
+          <div class="cluster-panel" id="panel-observability">
+            <div class="cluster-intro-card">
+              <div class="ci-header">
+                <span class="ci-badge">Observability & Quality</span>
+                <h3 class="ci-title">Alert Chains, 92% Log Reduction & 2,500+ Test Lines</h3>
+              </div>
+              <p class="ci-desc">
+                Elevating system observability while reducing MTTR from 4 days down to 1 day through structured alerting, conversion error detection, and rigorous unit/integration suites.
+              </p>
+            </div>
+
+            <div class="tasks-grid">
+              <!-- Conversion Mismatch Alerting -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">e449b990 & 9400412f</span>
+                  <span class="task-type">Observability Architecture</span>
+                </div>
+                <h4 class="task-title">Conversion-Rate Divergence Alerting with errors.Join</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Problem & Solution</span>
+                    <p>Built an automated detector that catches when RBL's <code>pointToCurrency</code> diverges from the configured tier rate. Sets an "outdated tier" cache marker and dispatches Slack and email alerts. Converted fire-and-forget void alert triggers into error-returning pipelines unified with Go 1.20+ <code>errors.Join</code>, ensuring failed notifications are captured with context.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">270+ lines • 161 test lines</span>
+                  <span class="tf-tech">Go • Observability • Slack API</span>
+                </div>
+              </article>
+
+              <!-- Log Volume Reduction -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">Log Compression Platform</span>
+                  <span class="task-type">Infrastructure Economics</span>
+                </div>
+                <h4 class="task-title">92% Log Volume Reduction (444M → 33M lines/day)</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Architecture</span>
+                    <p>Engineered dynamic log filtering with issuer-, customer-, and brand-level controls, cutting daily production log output from 444M to 33M lines/day (240GB down to 53GB/day). Replaced high-frequency hot-path info logs with targeted debug emitters.</p>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">-92% Log Volume</span>
+                  <span class="tf-tech">Go • CloudWatch • Docker</span>
+                </div>
+              </article>
+
+              <!-- Test Suites -->
+              <article class="task-card">
+                <div class="task-header">
+                  <span class="task-id">Standalone Test Suites</span>
+                  <span class="task-type">Verification Engineering</span>
+                </div>
+                <h4 class="task-title">2,500+ Lines of Production Test Suites</h4>
+                <div class="task-body">
+                  <div class="tb-item">
+                    <span class="tb-label">Coverage Highlights</span>
+                    <ul class="tb-list">
+                      <li><code>a9c3166c</code>: 713+ lines of RBL service tests establishing the foundation for idempotency verification.</li>
+                      <li><code>99af9ee8</code>: 503+ lines of AU Bank integration tests validating payment reversals and account lookup.</li>
+                      <li><code>fe449409</code>: 437+ lines of PopClub service unit tests.</li>
+                      <li>Mock hygiene: eliminated <code>gomock.Any()</code> in favor of explicit context matchers and <code>mock.ExpectationsWereMet()</code>.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="task-footer">
+                  <span class="tf-stat">2,500+ Test Lines</span>
+                  <span class="tf-tech">Go • Gomock • Integration Tests</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PRODUCTION POST-MORTEMS & SUBTLE BUGS SOLVED -->
+    <section id="postmortems" class="postmortems-section border-top">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-eyebrow">Engineering Judgment</span>
+          <h2 class="section-title">Production post-mortems & subtle bugs.</h2>
+          <p class="section-desc">
+            Senior engineering is defined by how you diagnose and fix subtle failure modes where systems report success while silently failing.
+          </p>
+        </header>
+
+        <div class="postmortem-grid">
+          <!-- Post-Mortem 1 -->
+          <div class="pm-card">
+            <div class="pm-header">
+              <span class="pm-tag bug">Silent Corruption</span>
+              <span class="pm-code">In-Place Variable Mutation</span>
+            </div>
+            <h3 class="pm-title">The Phantom Cache Key (Writing to Nowhere)</h3>
+            <div class="pm-comparison">
+              <div class="pm-block bad">
+                <span class="pm-label">The Defect</span>
+                <code>mobile = "91" + mobile</code> mutated the variable in place. Subsequent Redis cache and DB keys used the 91-prefixed number, while consumers read plain 10-digit keys. Writes silently vanished into unused keys.
+              </div>
+              <div class="pm-block good">
+                <span class="pm-label">The Resolution</span>
+                Isolated <code>apiMobile</code> strictly for the outbound HTTP envelope, preserving pristine customer identifiers for storage and cache indices.
               </div>
             </div>
           </div>
 
-          <!-- Active Core Inspector Panel -->
-          <div class="core-inspector-panel" id="coreInspectorPanel">
-            <div class="inspector-card">
-              <div class="inspector-header">
-                <span class="inspector-badge" id="inspBadge">ROUTING CORE SPEC</span>
-                <h3 class="inspector-title" id="inspTitle">18x Banking & Loyalty Issuer Service Proxy</h3>
+          <!-- Post-Mortem 2 -->
+          <div class="pm-card">
+            <div class="pm-header">
+              <span class="pm-tag concurrency">Concurrency Race</span>
+              <span class="pm-code">Cron Redrive Double-Debit</span>
+            </div>
+            <h3 class="pm-title">The Lost-Update Counter on Cron Retries</h3>
+            <div class="pm-comparison">
+              <div class="pm-block bad">
+                <span class="pm-label">The Defect</span>
+                Refund retries by cron re-read and incremented totals in application memory, causing lost-update races and double-debiting points at RBL with new timestamped request IDs.
               </div>
+              <div class="pm-block good">
+                <span class="pm-label">The Resolution</span>
+                Stabilized refund request IDs to return code <code>2012</code> (already applied), and switched counter increments to atomic database expressions: <code>gorm.Expr("total_refund_points + ?")</code>.
+              </div>
+            </div>
+          </div>
 
-              <p class="inspector-body" id="inspBody">
-                Centralized payment proxy written in Go, unifying 18 external banking institutions and loyalty networks. Operates with schema-driven routing configurations that replace fragile per-issuer hardcoded integrations, cutting partner onboarding from weeks to just 36 hours.
+          <!-- Post-Mortem 3 -->
+          <div class="pm-card">
+            <div class="pm-header">
+              <span class="pm-tag latency">Latency Trap</span>
+              <span class="pm-code">Synchronous Deferred Call</span>
+            </div>
+            <h3 class="pm-title">The 1.7-Second Discarded Network Trip</h3>
+            <div class="pm-comparison">
+              <div class="pm-block bad">
+                <span class="pm-label">The Defect</span>
+                A deferred best-effort <code>TxnStatus</code> call was executing synchronously right before <code>RedeemPoints</code> returned, eating 1.7 seconds of an upstream 5s timeout budget with its result discarded.
+              </div>
+              <div class="pm-block good">
+                <span class="pm-label">The Resolution</span>
+                Excised the redundant synchronous call, cutting critical path latency down to 3.4 seconds and preventing cascade timeouts.
+              </div>
+            </div>
+          </div>
+
+          <!-- Post-Mortem 4 -->
+          <div class="pm-card">
+            <div class="pm-header">
+              <span class="pm-tag integrity">Data Collision</span>
+              <span class="pm-code">Last-Write-Wins Overwrite</span>
+            </div>
+            <h3 class="pm-title">Multi-Reward Account Collapse</h3>
+            <div class="pm-comparison">
+              <div class="pm-block bad">
+                <span class="pm-label">The Defect</span>
+                AU Bank customer mappings were keyed on <code>accountId</code>. Customers holding multiple reward accounts under one bank account collapsed into a single row, overwriting points.
+              </div>
+              <div class="pm-block good">
+                <span class="pm-label">The Resolution</span>
+                Re-keyed database rows to <code>rewardsAccountId</code> with strict skip-and-warn guards for empty keys, preserving all active customer reward cards.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: JOBCLAW (PERSONAL PROJECT SHOWCASE) -->
+    <section id="jobclaw" class="jobclaw-section border-top">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-eyebrow">Personal System Architecture</span>
+          <h2 class="section-title">JobClaw: Approval-gated ATS pipeline in Go.</h2>
+          <p class="section-desc">
+            32,826 LOC system engineered with two decoupled state machines, deterministic fact-guards, and a hard human approval gate.
+          </p>
+        </header>
+
+        <div class="jobclaw-dossier">
+          <div class="jc-overview-grid">
+            <div class="jc-spec-card">
+              <span class="jc-num">32,826</span>
+              <span class="jc-label">Total Tracked Lines</span>
+              <span class="jc-sub">29,216 Go LOC (16K Prod, 13K Test)</span>
+            </div>
+            <div class="jc-spec-card">
+              <span class="jc-num">0.82</span>
+              <span class="jc-label">Test-to-Code Ratio</span>
+              <span class="jc-sub">243 Test Functions • 44.3% Coverage</span>
+            </div>
+            <div class="jc-spec-card">
+              <span class="jc-num">~87%</span>
+              <span class="jc-label">LLM Token Cost Cut</span>
+              <span class="jc-sub">$0.039 → $0.0049 via Gemini 2.5 Flash</span>
+            </div>
+            <div class="jc-spec-card">
+              <span class="jc-num">1,629</span>
+              <span class="jc-label">Real Jobs Ingested</span>
+              <span class="jc-sub">239 Shortlisted • Pure Go SQLite</span>
+            </div>
+          </div>
+
+          <div class="jc-deep-dive-card">
+            <div class="jc-body-col">
+              <span class="jc-pillar-badge">Architectural Principles</span>
+              <h3 class="jc-heading">Structural, not instructional, safety at the AI boundary.</h3>
+              <p class="jc-text">
+                An LLM handed a job description and a master resume will hallucinate toward the job description — inventing skills or inflating metrics. A prompt saying "don't invent things" is not a reliable control. JobClaw enforces safety structurally:
               </p>
 
-              <div class="inspector-specs-grid" id="inspSpecsGrid">
-                <div class="spec-box">
-                  <span class="s-label">Concurrency Control</span>
-                  <span class="s-value">Distributed Redis Locks</span>
-                </div>
-                <div class="spec-box">
-                  <span class="s-label">Idempotency Guarantee</span>
-                  <span class="s-value">100% Zero-Drift Replay</span>
-                </div>
-                <div class="spec-box">
-                  <span class="s-label">Deployable Services</span>
-                  <span class="s-value">4 Microservices</span>
-                </div>
-                <div class="spec-box">
-                  <span class="s-label">Onboarding Velocity</span>
-                  <span class="s-value">1.5 Days Total</span>
-                </div>
-              </div>
-
-              <!-- Interactive Simulator Trigger -->
-              <div class="inspector-action-row">
-                <button class="apple-pill-btn btn-sm" id="triggerCoreSimBtn">
-                  <span>Execute Simulated Transaction</span>
-                </button>
-                <span class="inspector-sim-feedback" id="simFeedback">Ready for dispatch</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Apple-Style "By The Numbers" (Massive Metrics with Radiant Typography) -->
-    <section id="benchmarks" class="benchmarks-section border-top">
-      <div class="container">
-        <header class="section-center-head">
-          <span class="apple-eyebrow">Measurable Scale</span>
-          <h2 class="apple-headline">Numbers that speak in production.</h2>
-        </header>
-
-        <div class="apple-bento-metrics">
-          <!-- Metric 1 -->
-          <div class="metric-card metric-primary">
-            <div class="metric-glaze"></div>
-            <span class="big-number gradient-silver">₹40+ Cr</span>
-            <h3 class="metric-title">Gross Merchandise Value</h3>
-            <p class="metric-desc">
-              Production transactional throughput moving real money without double-counting, race anomalies, or balance discrepancy.
-            </p>
-          </div>
-
-          <!-- Metric 2 -->
-          <div class="metric-card">
-            <div class="metric-glaze"></div>
-            <span class="big-number gradient-blue">18</span>
-            <h3 class="metric-title">Banking Partners Unified</h3>
-            <p class="metric-desc">
-              AU Bank, Kotak, RBL, CRED, and 14 other loyalty issuers abstracted behind a single idempotent gateway.
-            </p>
-          </div>
-
-          <!-- Metric 3 -->
-          <div class="metric-card">
-            <div class="metric-glaze"></div>
-            <span class="big-number gradient-emerald">92%</span>
-            <h3 class="metric-title">Log Volume Slashed</h3>
-            <p class="metric-desc">
-              Curtailed daily infrastructure logs from 444M down to 33M lines/day (240GB down to 53GB), saving substantial cloud costs.
-            </p>
-          </div>
-
-          <!-- Metric 4 -->
-          <div class="metric-card">
-            <div class="metric-glaze"></div>
-            <span class="big-number gradient-cyan">50%</span>
-            <h3 class="metric-title">Java Heap Optimization</h3>
-            <p class="metric-desc">
-              Diagnosed and profiled Java heap allocation with VisualVM at Maersk, cutting runtime memory consumption from ~2.4GB to ~1.2GB.
-            </p>
-          </div>
-
-          <!-- Metric 5 -->
-          <div class="metric-card">
-            <div class="metric-glaze"></div>
-            <span class="big-number gradient-amber">1.5 Days</span>
-            <h3 class="metric-title">New Issuer Onboarding</h3>
-            <p class="metric-desc">
-              Reduced partner integration cycles from 14+ days down to 36 hours using config-driven proxy orchestration.
-            </p>
-          </div>
-
-          <!-- Metric 6 -->
-          <div class="metric-card">
-            <div class="metric-glaze"></div>
-            <span class="big-number gradient-purple">~87%</span>
-            <h3 class="metric-title">LLM Cost Cut per Resume</h3>
-            <p class="metric-desc">
-              Reduced evaluation cost from $0.039 to $0.0049 in JobClaw via structured fact-guard delta verification.
-            </p>
-          </div>
-        </div>
-
-        <!-- Comparative Benchmark Graph (Apple Keynote Style) -->
-        <div class="benchmark-comparison-card">
-          <h3 class="comp-title">Comparative Performance Benchmarks</h3>
-          <p class="comp-sub">Measured results across production workloads versus legacy architectures.</p>
-
-          <div class="comparison-bars-grid">
-            <!-- Graph 1 -->
-            <div class="comp-bar-item">
-              <div class="comp-bar-header">
-                <span class="bar-metric-name">Daily Production Log Output (Twid)</span>
-                <span class="bar-metric-val">-92% Volume</span>
-              </div>
-              <div class="bar-track">
-                <div class="bar-fill legacy-fill" style="width: 100%;">
-                  <span class="bar-fill-label">Legacy: 444M lines/day (240 GB)</span>
-                </div>
-              </div>
-              <div class="bar-track">
-                <div class="bar-fill optimized-fill" style="width: 8%;">
-                  <span class="bar-fill-label">Optimized: 33M lines/day (53 GB)</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Graph 2 -->
-            <div class="comp-bar-item">
-              <div class="comp-bar-header">
-                <span class="bar-metric-name">Java Heap Memory Consumption (Maersk)</span>
-                <span class="bar-metric-val">-50% Runtime Heap</span>
-              </div>
-              <div class="bar-track">
-                <div class="bar-fill legacy-fill" style="width: 100%;">
-                  <span class="bar-fill-label">Pre-Profiling: 2.4 GB</span>
-                </div>
-              </div>
-              <div class="bar-track">
-                <div class="bar-fill optimized-fill" style="width: 50%;">
-                  <span class="bar-fill-label">Post-VisualVM Optimization: 1.2 GB</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Graph 3 -->
-            <div class="comp-bar-item">
-              <div class="comp-bar-header">
-                <span class="bar-metric-name">Partner Issuer Onboarding Duration</span>
-                <span class="bar-metric-val">1.5 Days vs 14 Days</span>
-              </div>
-              <div class="bar-track">
-                <div class="bar-fill legacy-fill" style="width: 100%;">
-                  <span class="bar-fill-label">Hardcoded Logic: 14 Days</span>
-                </div>
-              </div>
-              <div class="bar-track">
-                <div class="bar-fill optimized-fill" style="width: 11%;">
-                  <span class="bar-fill-label">Config-Driven Proxy: 1.5 Days</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 4: Production Experience (Keynote Dossier Format) -->
-    <section id="experience" class="experience-section border-top">
-      <div class="container">
-        <header class="section-center-head">
-          <span class="apple-eyebrow">Professional Track Record</span>
-          <h2 class="apple-headline">Experience in the arena.</h2>
-          <p class="apple-subhead">
-            Two years of hands-on software development across enterprise payment engines and global logistics microservices.
-          </p>
-        </header>
-
-        <div class="keynote-timeline">
-          <!-- Experience Card 1: Twid -->
-          <article class="keynote-card">
-            <div class="keynote-card-header">
-              <div class="kc-brand-col">
-                <span class="kc-org">Twid</span>
-                <span class="kc-badge">Payment Infrastructure</span>
-              </div>
-              <div class="kc-meta-col">
-                <span class="kc-role">Software Developer</span>
-                <span class="kc-period">Jan 2025 – Present • Bangalore, India</span>
-              </div>
-            </div>
-
-            <div class="keynote-card-body">
-              <ul class="keynote-bullets">
-                <li>
-                  <strong>18 Banking & Loyalty Integrations:</strong> Own and maintain integrations across 18 banking partners (AU Bank, RBL, Kotak, CRED, and others) within <code>issuer-service</code>, a Go microservice split across 4 deployable services exposing unified, idempotent redemption, refund, and accrual APIs.
-                </li>
-                <li>
-                  <strong>Config-Driven Issuer Proxy:</strong> Designed and built a config-driven Issuer Service Proxy centralizing routing, orchestration, and load balancing across all 18 integrations, replacing per-issuer hardcoded logic and slashing new partner onboarding time to <strong>1.5 days</strong>.
-                </li>
-                <li>
-                  <strong>₹40+ Cr GMV Backing:</strong> Delivered 10+ production payment integrations and platform enhancements end-to-end (API design, testing, rollout, monitoring), supporting business initiatives contributing to over Rs. 40 Cr in gross merchandise value.
-                </li>
-                <li>
-                  <strong>92% Production Log Slashed:</strong> Engineered a configurable logging platform with issuer-, customer-, and brand-level controls, cutting production log volume by 92% (from 444M down to 33M lines/day; 240GB down to 53GB/day), lowering cloud infrastructure overhead.
-                </li>
-                <li>
-                  <strong>75% MTTR Reduction:</strong> Elevated production observability by implementing panic recovery handlers, runtime diagnostics, distributed tracing, and Slack-based alerting, reducing incident detection and resolution time from <strong>4 days to 1 day</strong>.
-                </li>
-                <li>
-                  <strong>Concurrency & Race-Condition Correctness:</strong> Resolved high-impact concurrency vulnerabilities in wallet synchronization, issuer mapping, and point expiry workflows using synchronization and idempotent update strategies; identified and mitigated production anomalies including refund double-counting and points-timeout errors.
-                </li>
-              </ul>
-
-              <div class="keynote-tags-row">
-                <span class="k-tag">Go (Golang)</span>
-                <span class="k-tag">Banking Gateways</span>
-                <span class="k-tag">Idempotent APIs</span>
-                <span class="k-tag">Redis Locks</span>
-                <span class="k-tag">Apache Kafka</span>
-                <span class="k-tag">PostgreSQL</span>
-                <span class="k-tag">Distributed Tracing</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Experience Card 2: A.P. Moller - Maersk -->
-          <article class="keynote-card">
-            <div class="keynote-card-header">
-              <div class="kc-brand-col">
-                <span class="kc-org">A.P. Moller – Maersk</span>
-                <span class="kc-badge">Global Logistics</span>
-              </div>
-              <div class="kc-meta-col">
-                <span class="kc-role">Software Developer Intern</span>
-                <span class="kc-period">May 2024 – Nov 2024 • Bangalore, India</span>
-              </div>
-            </div>
-
-            <div class="keynote-card-body">
-              <ul class="keynote-bullets">
-                <li>
-                  <strong>50% Java Heap Optimization:</strong> Diagnosed and profiled Java heap allocation hotspots using VisualVM, reducing runtime memory consumption by half (approx. <strong>2.4GB down to 1.2GB</strong>) in a core Spring Boot service.
-                </li>
-                <li>
-                  <strong>Automated Ingestion Pipeline:</strong> Automated an enterprise data ingestion pipeline processing 15,000 records daily, reducing manual operational effort by <strong>80%</strong>.
-                </li>
-                <li>
-                  <strong>Microservices Observability:</strong> Implemented Prometheus metrics and Kubernetes health probes across 6 production microservices.
-                </li>
-              </ul>
-
-              <div class="keynote-tags-row">
-                <span class="k-tag">Java</span>
-                <span class="k-tag">Spring Boot</span>
-                <span class="k-tag">VisualVM Profiling</span>
-                <span class="k-tag">Heap Optimization</span>
-                <span class="k-tag">Kubernetes</span>
-                <span class="k-tag">Prometheus</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 5: Systems Architecture Deep Dives (JobClaw & Proxy) -->
-    <section id="projects" class="projects-section border-top">
-      <div class="container">
-        <header class="section-center-head">
-          <span class="apple-eyebrow">Engineering Case Studies</span>
-          <h2 class="apple-headline">Built for precision.</h2>
-          <p class="apple-subhead">
-            In-depth architectural breakdowns of systems engineered for failure-mode isolation and structural integrity.
-          </p>
-        </header>
-
-        <div class="showcase-stack">
-          <!-- Project 1: JobClaw -->
-          <div class="showcase-card">
-            <div class="showcase-copy">
-              <span class="sc-badge">Approval-Gated AI Pipeline</span>
-              <h3 class="sc-title">JobClaw: Automated ATS Discovery & Fact-Guard Pipeline</h3>
-              <p class="sc-desc">
-                An approval-gated job discovery and application-prep platform in Go that parses, normalizes, and scores postings across ATS platforms (Greenhouse, LinkedIn, Indeed, Glassdoor) while stopping at a strict human gate before any consequential execution.
-              </p>
-
-              <div class="sc-feature-list">
-                <div class="sc-item">
-                  <span class="sc-item-icon">✓</span>
+              <div class="jc-points-list">
+                <div class="jc-point">
+                  <div class="jcp-icon">1</div>
                   <div>
-                    <strong>Fact-Guard Structural Integrity:</strong>
-                    <span>Structurally verifies every LLM-generated resume field against a candidate’s master resume before rendering to PDF, keeping contact and education data completely isolated from the model's reach to prevent hallucinations.</span>
+                    <strong>Two Distinct State Machines:</strong> Jobs (<code>DISCOVERED → SCORING → SHORTLISTED → APPROVED</code>) are strictly separated from Applications (<code>DRAFT → READY_TO_APPLY → SUBMISSION_IN_PROGRESS</code>). An application cannot physically exist for an unapproved job.
                   </div>
                 </div>
-                <div class="sc-item">
-                  <span class="sc-item-icon">✓</span>
+                <div class="jc-point">
+                  <div class="jcp-icon">2</div>
                   <div>
-                    <strong>~87% Token Cost Reduction ($0.039 → $0.0049):</strong>
-                    <span>Achieved massive efficiency via structured schema diffing, token caching, and targeted delta prompt engineering without fact-preservation loss.</span>
+                    <strong>Deterministic Fact-Guard:</strong> <code>resume_fact_guard.go</code> verifies every metric, company, date, and technology traces back to the master resume before compiling to LaTeX/PDF. Failing checks reject and regenerate.
                   </div>
                 </div>
-                <div class="sc-item">
-                  <span class="sc-item-icon">✓</span>
+                <div class="jc-point">
+                  <div class="jcp-icon">3</div>
                   <div>
-                    <strong>Diagnosed & Fixed Silent-Success Bugs:</strong>
-                    <span>Resolved subtle production bugs including discovery data drops when one source failed and HTML-escaped parsing faults.</span>
+                    <strong>PII Structural Isolation:</strong> Candidate contact and education data are injected from <code>candidate.yaml</code> and <em>never</em> pass through the LLM prompt, placing high-stakes data outside model reach.
+                  </div>
+                </div>
+                <div class="jc-point">
+                  <div class="jcp-icon">4</div>
+                  <div>
+                    <strong>Ambiguity as a First-Class State:</strong> An unknown submission outcome locks the row in <code>SUBMISSION_IN_PROGRESS</code> for manual reconciliation, exits with code 2, and is never auto-retried.
                   </div>
                 </div>
               </div>
 
-              <div class="sc-actions">
-                <a href="https://github.com/ArkoOf22" target="_blank" rel="noopener noreferrer" class="apple-pill-btn btn-sm">
-                  <span>Inspect on GitHub</span>
-                  <span class="arrow-glyph">→</span>
+              <div class="jc-actions-row">
+                <a href="https://github.com/ArkoOf22" target="_blank" rel="noopener noreferrer" class="apple-pill-btn btn-primary">
+                  <span>View GitHub Profile</span>
+                  <span class="arrow-icon">↗</span>
                 </a>
-                <span class="sc-spec-note">32K Lines of Go • 243 Unit/Integration Tests</span>
+                <span class="jc-stack-tag">Go 1.26 • SQLite • Model Context Protocol • LaTeX</span>
               </div>
             </div>
 
-            <div class="showcase-visual">
-              <div class="code-terminal-apple">
-                <div class="cta-titlebar">
-                  <div class="cta-dots"><span></span><span></span><span></span></div>
-                  <span class="cta-filename">fact_guard_pipeline.go</span>
-                  <span class="cta-lang">Go 1.22</span>
+            <!-- Terminal Snippet -->
+            <div class="jc-code-col">
+              <div class="terminal-window">
+                <div class="tw-bar">
+                  <div class="tw-dots"><span></span><span></span><span></span></div>
+                  <span class="tw-file">fact_guard_pipeline.go</span>
+                  <span class="tw-tag">Go 1.26</span>
                 </div>
-                <pre class="cta-code"><code><span class="ck-kw">func</span> (fg *FactGuard) <span class="ck-fn">Verify</span>(ctx context.Context, gen *LLMOutput) (*Resume, error) {
-  <span class="ck-cm">// 1. Enforce strict bounds against candidate master resume</span>
-  <span class="ck-kw">if</span> err := fg.Validator.<span class="ck-fn">AssertBounds</span>(fg.Master, gen); err != nil {
-    <span class="ck-kw">return</span> nil, fmt.<span class="ck-fn">Errorf</span>(<span class="ck-str">"fact-guard failure: %w"</span>, err)
+                <pre class="tw-content"><code><span class="kw">func</span> (fg *FactGuard) <span class="fn">VerifyAndRender</span>(ctx context.Context, gen *LLMOutput) (*ResumePDF, error) {
+  <span class="cm">// 1. Deterministic validation against master resume</span>
+  <span class="kw">if</span> err := fg.Validator.<span class="fn">AssertBounds</span>(fg.Master, gen); err != nil {
+    <span class="kw">return</span> nil, fmt.<span class="fn">Errorf</span>(<span class="str">"fact-guard failure: %w"</span>, err)
   }
 
-  <span class="ck-cm">// 2. Keep contact & education entirely outside LLM reach</span>
+  <span class="cm">// 2. Keep contact & education structurally isolated</span>
   gen.Contact = fg.Master.DeterministicContact
   gen.Education = fg.Master.DeterministicEducation
 
-  <span class="ck-cm">// 3. Cost-optimized LaTeX rendering (~87% token cost cut)</span>
-  <span class="ck-kw">return</span> fg.<span class="ck-fn">RenderLaTeX</span>(ctx, gen)
-}</code></pre>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: Twid Config-Driven Issuer Proxy -->
-          <div class="showcase-card card-reversed">
-            <div class="showcase-copy">
-              <span class="sc-badge">Payment Gateway Architecture</span>
-              <h3 class="sc-title">Config-Driven Banking Issuer Service Proxy</h3>
-              <p class="sc-desc">
-                Centralized routing and orchestration proxy deployed across 4 Go microservices, unifying disparate banking interfaces (AU Bank, RBL, Kotak, CRED) under a uniform, strictly idempotent transaction protocol.
-              </p>
-
-              <div class="sc-feature-list">
-                <div class="sc-item">
-                  <span class="sc-item-icon">✓</span>
-                  <div>
-                    <strong>Onboarding Velocity (1.5 Days):</strong>
-                    <span>Replaced fragile per-issuer hardcoded routing with dynamic schema-driven proxy configurations, collapsing partner onboarding cycles from weeks to 36 hours.</span>
-                  </div>
-                </div>
-                <div class="sc-item">
-                  <span class="sc-item-icon">✓</span>
-                  <div>
-                    <strong>Zero-Drift Idempotency:</strong>
-                    <span>Enforced distributed synchronization and idempotency keys to eliminate race conditions, double-refunding bugs, and points-timeout anomalies.</span>
-                  </div>
-                </div>
-                <div class="sc-item">
-                  <span class="sc-item-icon">✓</span>
-                  <div>
-                    <strong>₹40+ Cr Scale:</strong>
-                    <span>Engineered the transactional backbone supporting business initiatives contributing to over Rs. 40 Cr in gross merchandise value.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sc-actions">
-                <a href="#silicon" class="apple-pill-btn btn-sm">
-                  <span>Inspect in Die Viewer</span>
-                  <span class="arrow-glyph">↑</span>
-                </a>
-                <span class="sc-spec-note">In Production @ Twid</span>
-              </div>
-            </div>
-
-            <div class="showcase-visual">
-              <div class="code-terminal-apple">
-                <div class="cta-titlebar">
-                  <div class="cta-dots"><span></span><span></span><span></span></div>
-                  <span class="cta-filename">issuer_proxy_mutex.go</span>
-                  <span class="cta-lang">Go 1.22</span>
-                </div>
-                <pre class="cta-code"><code><span class="ck-kw">func</span> (p *Proxy) <span class="ck-fn">Execute</span>(ctx context.Context, tx *Tx) (*Receipt, error) {
-  <span class="ck-cm">// Atomic Redis Mutex with strict 10s TTL lease</span>
-  lock, err := p.RedisLock.<span class="ck-fn">Acquire</span>(ctx, tx.IdempKey)
-  <span class="ck-kw">if</span> err != nil {
-    <span class="ck-kw">return</span> nil, ErrConcurrencyCollision
-  }
-  <span class="ck-kw">defer</span> lock.<span class="ck-fn">Release</span>(ctx)
-
-  <span class="ck-cm">// Config-driven route across 18 banking issuers</span>
-  handler := p.Registry.<span class="ck-fn">ResolveIssuer</span>(tx.IssuerCode)
-  <span class="ck-kw">return</span> handler.<span class="ck-fn">RedeemOrAccrue</span>(ctx, tx)
+  <span class="cm">// 3. Cost-optimized LaTeX PDF rendering ($0.0049/resume)</span>
+  <span class="kw">return</span> fg.<span class="fn">CompileLaTeX</span>(ctx, gen)
 }</code></pre>
               </div>
             </div>
@@ -620,84 +862,186 @@
       </div>
     </section>
 
-    <!-- Section 6: Apple-Style Tech Specs Matrix -->
-    <section id="specs" class="specs-section border-top">
+    <!-- SECTION 6: EXPERIENCE DOSSIER -->
+    <section id="experience" class="experience-section border-top">
       <div class="container">
-        <header class="section-center-head">
-          <span class="apple-eyebrow">Technical Specifications</span>
-          <h2 class="apple-headline">Tech Specs.</h2>
-          <p class="apple-subhead">
-            Engineered disciplines and production technologies organized by operational layer.
+        <header class="section-head">
+          <span class="section-eyebrow">Professional History</span>
+          <h2 class="section-title">Production track record.</h2>
+          <p class="section-desc">
+            Software engineering roles in high-scale fintech infrastructure and global logistics.
           </p>
         </header>
 
-        <div class="apple-specs-table">
-          <div class="spec-row">
-            <div class="spec-category">Languages & Runtimes</div>
-            <div class="spec-entries">
-              <div class="spec-item">
-                <span class="spec-name">Primary Languages</span>
-                <span class="spec-desc">Go (Golang), Java 21, SQL, Python</span>
+        <div class="experience-timeline">
+          <!-- Twid -->
+          <article class="exp-card">
+            <div class="exp-header">
+              <div class="exp-org-col">
+                <h3 class="exp-org">Twid</h3>
+                <span class="exp-badge">Payment Infrastructure</span>
               </div>
-              <div class="spec-item">
-                <span class="spec-name">Frameworks</span>
-                <span class="spec-desc">Spring Boot, Microservices Runtimes, gRPC, REST</span>
+              <div class="exp-meta-col">
+                <span class="exp-role">Software Developer</span>
+                <span class="exp-period">Jan 2025 – Present • Bangalore, India</span>
+              </div>
+            </div>
+
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>
+                  <strong>18 Banking & Loyalty Integrations:</strong> Own and maintain integrations across 18 banking partners (AU Bank, RBL, Kotak, CRED, PopClub, BOBCard) within <code>issuer-service</code>, a Go microservice split across 4 deployable services exposing idempotent redemption, refund, and accrual APIs.
+                </li>
+                <li>
+                  <strong>Config-Driven Issuer Proxy:</strong> Architected a centralized proxy replacing per-issuer hardcoded routing, collapsing partner onboarding from weeks to <strong>1.5 days</strong>.
+                </li>
+                <li>
+                  <strong>₹40+ Cr GMV Backed:</strong> Delivered 10+ production payment integrations end-to-end (API design, crypto clients, testing, rollout, monitoring), supporting business initiatives moving over Rs. 40 Cr GMV.
+                </li>
+                <li>
+                  <strong>92% Production Log Slashed:</strong> Engineered a configurable logging platform with issuer-, customer-, and brand-level controls, cutting logs from 444M down to 33M lines/day (240GB down to 53GB/day).
+                </li>
+                <li>
+                  <strong>75% MTTR Reduction:</strong> Elevated production observability with panic recovery handlers, runtime diagnostics, distributed tracing, and Slack alerting, cutting MTTR from <strong>4 days to 1 day</strong>.
+                </li>
+                <li>
+                  <strong>Concurrency & Race Elimination:</strong> Resolved high-impact race conditions in wallet synchronization and point expiry; prevented refund double-counting and points-timeout anomalies using atomic SQL expressions and Redis locks.
+                </li>
+              </ul>
+
+              <div class="exp-tags">
+                <span class="e-tag">Go (Golang)</span>
+                <span class="e-tag">Distributed Systems</span>
+                <span class="e-tag">Idempotent APIs</span>
+                <span class="e-tag">Redis Locks</span>
+                <span class="e-tag">Kafka</span>
+                <span class="e-tag">PostgreSQL</span>
+                <span class="e-tag">Docker</span>
+                <span class="e-tag">AWS ECS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Maersk -->
+          <article class="exp-card">
+            <div class="exp-header">
+              <div class="exp-org-col">
+                <h3 class="exp-org">A.P. Moller – Maersk</h3>
+                <span class="exp-badge">Global Logistics & Supply Chain</span>
+              </div>
+              <div class="exp-meta-col">
+                <span class="exp-role">Software Developer Intern</span>
+                <span class="exp-period">May 2024 – Nov 2024 • Bangalore, India</span>
+              </div>
+            </div>
+
+            <div class="exp-body">
+              <ul class="exp-bullets">
+                <li>
+                  <strong>50% Java Heap Optimization:</strong> Diagnosed and profiled Java heap allocation hotspots using VisualVM, cutting runtime memory consumption in half (approx. <strong>2.4GB down to 1.2GB</strong>) on a Spring Boot microservice.
+                </li>
+                <li>
+                  <strong>Automated Ingestion Pipeline:</strong> Built an automated ingestion pipeline processing 15,000 records daily, reducing manual operational overhead by <strong>80%</strong>.
+                </li>
+                <li>
+                  <strong>Microservices Observability:</strong> Implemented Prometheus metrics, Grafana dashboards, and Kubernetes health probes across 6 production microservices.
+                </li>
+              </ul>
+
+              <div class="exp-tags">
+                <span class="e-tag">Java</span>
+                <span class="e-tag">Spring Boot</span>
+                <span class="e-tag">VisualVM</span>
+                <span class="e-tag">Heap Profiling</span>
+                <span class="e-tag">Kubernetes</span>
+                <span class="e-tag">Prometheus</span>
+                <span class="e-tag">Kafka</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: TECH SPECS & COMPETENCIES -->
+    <section id="skills" class="skills-section border-top">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-eyebrow">Technical Specifications</span>
+          <h2 class="section-title">Engineering competencies.</h2>
+          <p class="section-desc">
+            Production technologies and core backend disciplines.
+          </p>
+        </header>
+
+        <div class="specs-table">
+          <div class="spec-row">
+            <div class="spec-domain">Languages & Runtimes</div>
+            <div class="spec-content">
+              <div class="spec-pill-group">
+                <span class="sp-badge">Go (Golang 1.22 / 1.26)</span>
+                <span class="sp-badge">Java 21 / Spring Boot</span>
+                <span class="sp-badge">SQL (PostgreSQL, SQLite)</span>
+                <span class="sp-badge">Python</span>
               </div>
             </div>
           </div>
 
           <div class="spec-row">
-            <div class="spec-category">Distributed Systems</div>
-            <div class="spec-entries">
-              <div class="spec-item">
-                <span class="spec-name">Concurrency & Safety</span>
-                <span class="spec-desc">Idempotent API Design, Redis Distributed Mutex Locks, Race-Condition Elimination</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-name">Event Streaming & DBs</span>
-                <span class="spec-desc">Apache Kafka, Redis, PostgreSQL, SQLite</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="spec-row">
-            <div class="spec-category">Cloud & Infrastructure</div>
-            <div class="spec-entries">
-              <div class="spec-item">
-                <span class="spec-name">Hosting & Compute</span>
-                <span class="spec-desc">AWS (EC2, S3, IAM), Docker Containerization, Kubernetes Pod Orchestration</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-name">CI/CD Automation</span>
-                <span class="spec-desc">Jenkins, GitHub Actions, Automated Staging & Canary Verification</span>
+            <div class="spec-domain">Distributed Systems & Concurrency</div>
+            <div class="spec-content">
+              <div class="spec-pill-group">
+                <span class="sp-badge">Idempotency & Retry-Safety</span>
+                <span class="sp-badge">Redis Distributed Mutex Locks</span>
+                <span class="sp-badge">Atomic Database Expressions</span>
+                <span class="sp-badge">Apache Kafka</span>
+                <span class="sp-badge">Dead-Letter Queues</span>
               </div>
             </div>
           </div>
 
           <div class="spec-row">
-            <div class="spec-category">Observability & Profiling</div>
-            <div class="spec-entries">
-              <div class="spec-item">
-                <span class="spec-name">Diagnostics & Metrics</span>
-                <span class="spec-desc">Prometheus, Grafana, ELK Stack, Distributed Tracing</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-name">Heap & Memory Profiling</span>
-                <span class="spec-desc">VisualVM JVM Allocation Profiling (50% memory reduction verified)</span>
+            <div class="spec-domain">Data Storage & Caching</div>
+            <div class="spec-content">
+              <div class="spec-pill-group">
+                <span class="sp-badge">PostgreSQL (GORM, Index Tuning)</span>
+                <span class="sp-badge">Redis (Tiered Fallback Caching)</span>
+                <span class="sp-badge">SQLite (Pure Go modernc.org)</span>
+                <span class="sp-badge">Cache Invalidation Protocols</span>
               </div>
             </div>
           </div>
 
           <div class="spec-row">
-            <div class="spec-category">Academic Foundation</div>
-            <div class="spec-entries">
-              <div class="spec-item">
-                <span class="spec-name">Institution</span>
-                <span class="spec-desc">Ramaiah Institute of Technology, Bangalore (2020 – 2024)</span>
+            <div class="spec-domain">Cloud, DevOps & Observability</div>
+            <div class="spec-content">
+              <div class="spec-pill-group">
+                <span class="sp-badge">AWS (ECS, SSM Parameter Store, S3)</span>
+                <span class="sp-badge">Docker Containerization</span>
+                <span class="sp-badge">Kubernetes Probes</span>
+                <span class="sp-badge">Prometheus & Grafana</span>
+                <span class="sp-badge">Distributed Tracing</span>
               </div>
-              <div class="spec-item">
-                <span class="spec-name">Degree & Performance</span>
-                <span class="spec-desc">B.E. in Information Science • <strong>CGPA: 9.17 / 10.0</strong></span>
+            </div>
+          </div>
+
+          <div class="spec-row">
+            <div class="spec-domain">Testing & Reliability</div>
+            <div class="spec-content">
+              <div class="spec-pill-group">
+                <span class="sp-badge">Gomock & Test Doubles</span>
+                <span class="sp-badge">Integration Test Suites (2,500+ LOC)</span>
+                <span class="sp-badge">VisualVM JVM Profiling</span>
+                <span class="sp-badge">Failure Mode Isolation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spec-row">
+            <div class="spec-domain">Education</div>
+            <div class="spec-content">
+              <div class="spec-edu">
+                <strong>Ramaiah Institute of Technology, Bangalore</strong> — B.E. in Information Science (2020 – 2024) • <strong>CGPA: 9.17 / 10.0</strong>
               </div>
             </div>
           </div>
@@ -705,97 +1049,96 @@
       </div>
     </section>
 
-    <!-- Section 7: Apple-Style Contact Stage -->
-    <section id="contact" class="contact-stage border-top">
-      <div class="container contact-max">
-        <header class="section-center-head">
-          <span class="apple-eyebrow">Direct Communications</span>
-          <h2 class="apple-headline">Let's build something significant.</h2>
-          <p class="apple-subhead">
-            Open to senior engineering opportunities, payment infrastructure architecture discussions, and technical collaborations.
+    <!-- SECTION 8: CONTACT & DIRECT COMMUNICATIONS -->
+    <section id="contact" class="contact-section border-top">
+      <div class="container contact-container">
+        <header class="section-head">
+          <span class="section-eyebrow">Direct Contact</span>
+          <h2 class="section-title">Let's build something significant.</h2>
+          <p class="section-desc">
+            Open to senior engineering opportunities, distributed systems challenges, and payment infrastructure roles.
           </p>
         </header>
 
-        <div class="apple-contact-card">
-          <div class="contact-channels-strip">
-            <div class="c-channel">
-              <span class="cc-label">Direct Email</span>
-              <div class="cc-action-row">
-                <span class="cc-value" id="emailVal">arkodeepkoley123@gmail.com</span>
+        <div class="contact-card">
+          <div class="contact-channels">
+            <div class="channel-item">
+              <span class="ci-label">Direct Email</span>
+              <div class="ci-action">
+                <span class="ci-val" id="emailVal">arkodeepkoley123@gmail.com</span>
                 <button class="apple-pill-btn btn-sm" id="copyEmailBtn">
                   <span id="copyBtnLabel">Copy</span>
                 </button>
               </div>
             </div>
 
-            <div class="c-channel">
-              <span class="cc-label">Telephone</span>
-              <a href="tel:+917478156546" class="cc-link">+91 74781 56546</a>
+            <div class="channel-item">
+              <span class="ci-label">Telephone</span>
+              <a href="tel:+917478156546" class="ci-link">+91 74781 56546</a>
             </div>
 
-            <div class="c-channel">
-              <span class="cc-label">Location</span>
-              <span class="cc-value">Bangalore, India (IST / UTC+5:30)</span>
+            <div class="channel-item">
+              <span class="ci-label">GitHub</span>
+              <a href="https://github.com/ArkoOf22" target="_blank" rel="noopener noreferrer" class="ci-link">github.com/ArkoOf22</a>
             </div>
 
-            <div class="c-channel">
-              <span class="cc-label">GitHub</span>
-              <a href="https://github.com/ArkoOf22" target="_blank" rel="noopener noreferrer" class="cc-link">github.com/ArkoOf22</a>
+            <div class="channel-item">
+              <span class="ci-label">Location</span>
+              <span class="ci-val">Bangalore, India (IST / UTC+5:30)</span>
             </div>
           </div>
 
-          <!-- Apple-Style Smooth Input Form -->
-          <form id="contactForm" class="apple-form" novalidate>
-            <div class="form-row-2">
-              <div class="form-field">
-                <label for="senderName" class="f-label">Your Name</label>
-                <input type="text" id="senderName" class="apple-input" placeholder="Craig Federighi" required />
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="input-wrap">
+                <label for="senderName" class="form-label">Name</label>
+                <input type="text" id="senderName" class="pro-input" placeholder="Your Name" required />
               </div>
-              <div class="form-field">
-                <label for="senderEmail" class="f-label">Your Email</label>
-                <input type="email" id="senderEmail" class="apple-input" placeholder="craig@apple.com" required />
+              <div class="input-wrap">
+                <label for="senderEmail" class="form-label">Email</label>
+                <input type="email" id="senderEmail" class="pro-input" placeholder="you@company.com" required />
               </div>
             </div>
 
-            <div class="form-field">
-              <label for="senderSubject" class="f-label">Subject</label>
-              <input type="text" id="senderSubject" class="apple-input" placeholder="Backend Engineer Role / Distributed Systems Architecture" required />
+            <div class="input-wrap">
+              <label for="senderSubject" class="form-label">Subject</label>
+              <input type="text" id="senderSubject" class="pro-input" placeholder="Backend Engineer Role / Distributed Systems" required />
             </div>
 
-            <div class="form-field">
-              <label for="senderMessage" class="f-label">Message</label>
-              <textarea id="senderMessage" class="apple-textarea" rows="4" placeholder="Hi Arkodeep, I'd love to connect regarding..." required></textarea>
+            <div class="input-wrap">
+              <label for="senderMessage" class="form-label">Message</label>
+              <textarea id="senderMessage" class="pro-textarea" rows="4" placeholder="Hi Arkodeep, I'd like to connect regarding..." required></textarea>
             </div>
 
             <button type="submit" id="submitFormBtn" class="apple-pill-btn btn-primary btn-block">
               <span>Transmit Message</span>
-              <span class="arrow-glyph">→</span>
+              <span class="arrow-icon">→</span>
             </button>
-            <div id="formFeedback" class="form-feedback-text" aria-live="polite"></div>
+            <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Apple Minimalist Footer -->
-  <footer class="apple-footer">
-    <div class="container footer-inner">
-      <div class="footer-legal">
+  <!-- Minimalist Clean Footer -->
+  <footer class="pro-footer">
+    <div class="container footer-content">
+      <div class="footer-left">
         <p>Copyright © <span id="currentYear"></span> Arkodeep Koley. All rights reserved.</p>
-        <p class="footer-subtext">Designed with Apple-inspired architectural precision. Engineered for zero failure.</p>
+        <p class="footer-sub">Software Developer • Payment Infrastructure & Distributed Systems</p>
       </div>
-      <div class="footer-nav">
-        <a href="#hero" class="fn-link">Overview</a>
-        <a href="#silicon" class="fn-link">Architecture</a>
-        <a href="#benchmarks" class="fn-link">Benchmarks</a>
-        <a href="#specs" class="fn-link">Tech Specs</a>
-        <a href="#contact" class="fn-link">Contact</a>
+      <div class="footer-right">
+        <a href="#hero" class="f-link">Overview</a>
+        <a href="#impact" class="f-link">Scale</a>
+        <a href="#systems" class="f-link">Production Work</a>
+        <a href="#postmortems" class="f-link">Bugs Solved</a>
+        <a href="#jobclaw" class="f-link">JobClaw</a>
+        <a href="#contact" class="f-link">Contact</a>
       </div>
     </div>
   </footer>
 
-  <!-- Script -->
   <script src="main.js"></script>
 </body>
 </html>
