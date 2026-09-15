@@ -1618,11 +1618,29 @@ body.dark-canvas {
   min-height: 110px;
 }
 
+.form-actions-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.mailto-btn {
+  font-size: 0.82rem;
+  padding: 6px 12px;
+  color: var(--text-muted);
+}
+
+.mailto-btn:hover {
+  color: var(--accent-blue-glow);
+}
+
 .form-feedback {
   font-size: 0.85rem;
   font-family: var(--font-mono);
   text-align: center;
   min-height: 20px;
+  line-height: 1.5;
 }
 
 .form-feedback.success { color: var(--accent-emerald); }

@@ -167,14 +167,29 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 6. Contact Form Validation & Simulated Transmission
+  // 6. Real Contact Form Transmission (FormSubmit.co + Mailto Fallback)
   // --------------------------------------------------------------------------
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
   const submitFormBtn = document.getElementById('submitFormBtn');
+  const directMailtoLink = document.getElementById('directMailtoLink');
+
+  // Dynamically update mailto link as user types
+  function updateMailtoHref() {
+    if (!directMailtoLink) return;
+    const name = document.getElementById('senderName')?.value.trim() || '';
+    const subject = document.getElementById('senderSubject')?.value.trim() || 'Portfolio Inquiry';
+    const message = document.getElementById('senderMessage')?.value.trim() || '';
+    const body = `Hi Arkodeep,\n\n${message}\n\nBest regards,\n${name}`;
+    directMailtoLink.href = `mailto:arkodeepkoley123@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  ['senderName', 'senderSubject', 'senderMessage'].forEach((fieldId) => {
+    document.getElementById(fieldId)?.addEventListener('input', updateMailtoHref);
+  });
 
   if (contactForm && formFeedback && submitFormBtn) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('senderName')?.value.trim();
@@ -196,20 +211,56 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       submitFormBtn.disabled = true;
-      submitFormBtn.innerHTML = '<span>Transmitting...</span>';
+      submitFormBtn.innerHTML = '<span>Sending to arkodeepkoley123@gmail.com...</span>';
       formFeedback.textContent = '';
+      formFeedback.className = 'form-feedback';
 
-      setTimeout(() => {
+      try {
+        const payload = {
+          name: name,
+          email: email,
+          _subject: `[Portfolio Contact] ${subject || 'New Message from ' + name}`,
+          message: message,
+          _template: 'table',
+          _captcha: 'false'
+        };
+
+        const response = await fetch('https://formsubmit.co/ajax/arkodeepkoley123@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (response.ok && (data.success === 'true' || data.success === true || data.message)) {
+          submitFormBtn.disabled = false;
+          submitFormBtn.innerHTML = '<span>Message Delivered</span> <span class="arrow-icon">✓</span>';
+          formFeedback.textContent = `Thank you, ${name}! Your email was dispatched directly to Arkodeep's Gmail inbox.`;
+          formFeedback.className = 'form-feedback success';
+          contactForm.reset();
+          updateMailtoHref();
+
+          setTimeout(() => {
+            submitFormBtn.innerHTML = '<span>Transmit Message to Gmail</span> <span class="arrow-icon">→</span>';
+          }, 5000);
+        } else {
+          throw new Error(data.message || 'Server error');
+        }
+      } catch (err) {
+        console.warn('FormSubmit AJAX dispatch encountered an error, falling back to mailto:', err);
+        // Fallback: trigger default mail client with prefilled mailto
+        const mailtoUrl = `mailto:arkodeepkoley123@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`Hi Arkodeep,\n\n${message}\n\nFrom: ${name} (${email})`)}`;
+        window.location.href = mailtoUrl;
+
         submitFormBtn.disabled = false;
-        submitFormBtn.innerHTML = '<span>Transmitted Successfully</span> <span class="arrow-icon">✓</span>';
-        formFeedback.textContent = `Thank you, ${name}. Your message has been prepared for Arkodeep. Expect a response within 24 hours.`;
+        submitFormBtn.innerHTML = '<span>Opened in Mail App</span> <span class="arrow-icon">↗</span>';
+        formFeedback.textContent = `Triggered your mail client to send directly to arkodeepkoley123@gmail.com. Or copy the email directly above.`;
         formFeedback.className = 'form-feedback success';
-        contactForm.reset();
-
-        setTimeout(() => {
-          submitFormBtn.innerHTML = '<span>Transmit Message</span> <span class="arrow-icon">→</span>';
-        }, 4000);
-      }, 600);
+      }
     });
   }
 });

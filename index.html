@@ -1396,32 +1396,43 @@
             </div>
           </div>
 
-          <form id="contactForm" class="contact-form" novalidate>
+          <form id="contactForm" class="contact-form" action="https://formsubmit.co/arkodeepkoley123@gmail.com" method="POST">
+            <!-- Real email dispatch configuration for FormSubmit.co -->
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_subject" value="[Portfolio] New Message from Portfolio" />
+
             <div class="form-row">
               <div class="input-wrap">
                 <label for="senderName" class="form-label">Name</label>
-                <input type="text" id="senderName" class="pro-input" placeholder="Your Name" required />
+                <input type="text" id="senderName" name="name" class="pro-input" placeholder="Your Name" required />
               </div>
               <div class="input-wrap">
                 <label for="senderEmail" class="form-label">Email</label>
-                <input type="email" id="senderEmail" class="pro-input" placeholder="you@company.com" required />
+                <input type="email" id="senderEmail" name="email" class="pro-input" placeholder="you@company.com" required />
               </div>
             </div>
 
             <div class="input-wrap">
               <label for="senderSubject" class="form-label">Subject</label>
-              <input type="text" id="senderSubject" class="pro-input" placeholder="Backend Engineer Role / Distributed Systems" required />
+              <input type="text" id="senderSubject" name="subject" class="pro-input" placeholder="Backend Engineer Role / Distributed Systems" required />
             </div>
 
             <div class="input-wrap">
               <label for="senderMessage" class="form-label">Message</label>
-              <textarea id="senderMessage" class="pro-textarea" rows="4" placeholder="Hi Arkodeep, I'd like to connect regarding..." required></textarea>
+              <textarea id="senderMessage" name="message" class="pro-textarea" rows="4" placeholder="Hi Arkodeep, I'd like to connect regarding..." required></textarea>
             </div>
 
-            <button type="submit" id="submitFormBtn" class="apple-pill-btn btn-primary btn-block">
-              <span>Transmit Message</span>
-              <span class="arrow-icon">→</span>
-            </button>
+            <div class="form-actions-cluster">
+              <button type="submit" id="submitFormBtn" class="apple-pill-btn btn-primary btn-block">
+                <span>Transmit Message to Gmail</span>
+                <span class="arrow-icon">→</span>
+              </button>
+              <a href="mailto:arkodeepkoley123@gmail.com" id="directMailtoLink" class="apple-ghost-btn mailto-btn">
+                <span>Or open in default mail app</span>
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
             <div id="formFeedback" class="form-feedback" aria-live="polite"></div>
           </form>
         </div>
