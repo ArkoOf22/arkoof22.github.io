@@ -963,88 +963,396 @@
       </div>
     </section>
 
-    <!-- SECTION 7: TECH SPECS & COMPETENCIES -->
+    <!-- SECTION 7: APPLE-STYLE TECHNICAL SPECIFICATIONS MATRIX -->
     <section id="skills" class="skills-section border-top">
       <div class="container">
         <header class="section-head">
           <span class="section-eyebrow">Technical Specifications</span>
-          <h2 class="section-title">Engineering competencies.</h2>
+          <h2 class="section-title">Engineered to production limits.</h2>
           <p class="section-desc">
-            Production technologies and core backend disciplines.
+            Granular technical competencies, architectural mechanisms, and production-tested runtime capabilities.
           </p>
         </header>
 
-        <div class="specs-table">
-          <div class="spec-row">
-            <div class="spec-domain">Languages & Runtimes</div>
-            <div class="spec-content">
-              <div class="spec-pill-group">
-                <span class="sp-badge">Go (Golang 1.22 / 1.26)</span>
-                <span class="sp-badge">Java 21 / Spring Boot</span>
-                <span class="sp-badge">SQL (PostgreSQL, SQLite)</span>
-                <span class="sp-badge">Python</span>
+        <!-- Apple-Style Spec Segment Filter -->
+        <div class="specs-nav-filter" role="tablist">
+          <button class="spec-filter-btn active" data-spec-filter="all">All Specifications</button>
+          <button class="spec-filter-btn" data-spec-filter="runtimes">Languages & Runtimes</button>
+          <button class="spec-filter-btn" data-spec-filter="concurrency">Concurrency & Distributed</button>
+          <button class="spec-filter-btn" data-spec-filter="data">Storage & Caching</button>
+          <button class="spec-filter-btn" data-spec-filter="cloud">Cloud & Observability</button>
+          <button class="spec-filter-btn" data-spec-filter="quality">Testing & Reliability</button>
+        </div>
+
+        <div class="apple-specs-matrix">
+
+          <!-- Spec Category 1: Languages & Runtimes -->
+          <div class="apple-spec-group" data-spec-cat="runtimes">
+            <div class="spec-group-header">
+              <span class="spec-group-tag">01 / RUNTIMES</span>
+              <h3 class="spec-group-title">Languages & Runtimes</h3>
+              <p class="spec-group-desc">Low-latency compiled backends, typed concurrency, and zero-framework standard library architectures.</p>
+            </div>
+            <div class="spec-cards-grid">
+              <!-- Go -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Go (Golang)</span>
+                  <span class="asc-pill">v1.22 Prod • v1.26 Personal</span>
+                </div>
+                <p class="asc-desc">Primary production language at Twid for <code>issuer-service</code> and personal systems (JobClaw). Heavily optimized for concurrent I/O, goroutine worker pools, and memory efficiency.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Stdlib First</span>
+                  <span class="asc-chip">Goroutine Pools</span>
+                  <span class="asc-chip">Zero-Cgo SQLite</span>
+                  <span class="asc-chip">Channel IPC</span>
+                </div>
+              </div>
+
+              <!-- Java -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Java & Spring Boot</span>
+                  <span class="asc-pill">Java 21 • Microservices</span>
+                </div>
+                <p class="asc-desc">Engineered enterprise logistics services at A.P. Moller – Maersk. Profiled heap allocation and memory hotspots using VisualVM, cutting memory footprint by 50%.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Spring Boot</span>
+                  <span class="asc-chip">VisualVM Profiling</span>
+                  <span class="asc-chip">50% Heap Cut</span>
+                  <span class="asc-chip">REST & gRPC</span>
+                </div>
+              </div>
+
+              <!-- SQL -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">SQL & Data Definition</span>
+                  <span class="asc-pill">PostgreSQL 15 • SQLite</span>
+                </div>
+                <p class="asc-desc">Schema design, automated migrations, composite indexing, and database-level atomic expressions eliminating lost-update race conditions in financial ledgers.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">GORM Atomic Expr</span>
+                  <span class="asc-chip">Index Tuning</span>
+                  <span class="asc-chip">Check-Then-Insert</span>
+                  <span class="asc-chip">11 Migrations</span>
+                </div>
+              </div>
+
+              <!-- Python -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Python</span>
+                  <span class="asc-pill">Automation & Testing</span>
+                </div>
+                <p class="asc-desc">Automated ingestion pipelines, diagnostic scripting, integration verification harnesses, and algorithmic simulation tools.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Pipeline Automation</span>
+                  <span class="asc-chip">Test Scripts</span>
+                  <span class="asc-chip">Data Ingestion</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="spec-row">
-            <div class="spec-domain">Distributed Systems & Concurrency</div>
-            <div class="spec-content">
-              <div class="spec-pill-group">
-                <span class="sp-badge">Idempotency & Retry-Safety</span>
-                <span class="sp-badge">Redis Distributed Mutex Locks</span>
-                <span class="sp-badge">Atomic Database Expressions</span>
-                <span class="sp-badge">Apache Kafka</span>
-                <span class="sp-badge">Dead-Letter Queues</span>
+          <!-- Spec Category 2: Distributed Systems & Concurrency -->
+          <div class="apple-spec-group" data-spec-cat="concurrency">
+            <div class="spec-group-header">
+              <span class="spec-group-tag">02 / CONCURRENCY</span>
+              <h3 class="spec-group-title">Distributed Systems & Concurrency</h3>
+              <p class="spec-group-desc">Zero-double-spend locks, deterministic replay safety, and high-frequency financial synchronization.</p>
+            </div>
+            <div class="spec-cards-grid">
+              <!-- Idempotency -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Idempotency & Replay Safety</span>
+                  <span class="asc-pill">100% Zero Drift</span>
+                </div>
+                <p class="asc-desc">Engineered <code>stableRBLClientTxnID()</code> to engage banking deduplication. Replay detection returns cached receipts (code <code>2012</code>) with zero balance mutation.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Deterministic Keys</span>
+                  <span class="asc-chip">Code 2012 Handling</span>
+                  <span class="asc-chip">Zero Double-Spend</span>
+                  <span class="asc-chip">Resume Logic</span>
+                </div>
+              </div>
+
+              <!-- Distributed Mutex -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Redis Distributed Mutex</span>
+                  <span class="asc-pill">TTL Leases • P95 &lt; 28ms</span>
+                </div>
+                <p class="asc-desc">High-frequency distributed locking backed by Redis key leases with automatic 10s TTL failover, guaranteeing mutual exclusion across concurrent wallet adjustments.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">10s Lease Failover</span>
+                  <span class="asc-chip">Atomic CAS</span>
+                  <span class="asc-chip">Wallet Sync</span>
+                  <span class="asc-chip">Collision-Free</span>
+                </div>
+              </div>
+
+              <!-- Transport Ambiguity -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Transport Ambiguity Isolation</span>
+                  <span class="asc-pill">Ambiguous != Failed</span>
+                </div>
+                <p class="asc-desc">Engineered <code>isUnknownRBLRedeemOutcome()</code> separating transport timeouts from definite rejections. Ambiguous calls remain locked in <code>IN_PROGRESS</code> to prevent duplicate holds.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Context Deadline Isolation</span>
+                  <span class="asc-chip">Hystrix Timeout Decoupling</span>
+                  <span class="asc-chip">First-Class Ambiguity</span>
+                </div>
+              </div>
+
+              <!-- Event Streaming -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Event Streaming & Queues</span>
+                  <span class="asc-pill">Kafka • Redis Queues</span>
+                </div>
+                <p class="asc-desc">Asynchronous event ingestion and decoupled processing. Built <code>CLogsExternalQueue</code> with plain-string Redis RPUSH envelopes for cross-service non-Go consumer pipelines.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Apache Kafka</span>
+                  <span class="asc-chip">Redis RPUSH Wire</span>
+                  <span class="asc-chip">Dead-Letter Routing</span>
+                  <span class="asc-chip">Async Workers</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="spec-row">
-            <div class="spec-domain">Data Storage & Caching</div>
-            <div class="spec-content">
-              <div class="spec-pill-group">
-                <span class="sp-badge">PostgreSQL (GORM, Index Tuning)</span>
-                <span class="sp-badge">Redis (Tiered Fallback Caching)</span>
-                <span class="sp-badge">SQLite (Pure Go modernc.org)</span>
-                <span class="sp-badge">Cache Invalidation Protocols</span>
+          <!-- Spec Category 3: Data Storage & Caching -->
+          <div class="apple-spec-group" data-spec-cat="data">
+            <div class="spec-group-header">
+              <span class="spec-group-tag">03 / DATA FABRIC</span>
+              <h3 class="spec-group-title">Data Storage & Caching</h3>
+              <p class="spec-group-desc">Hierarchical cache fallback architectures, atomic ledger updates, and connection resilience.</p>
+            </div>
+            <div class="spec-cards-grid">
+              <!-- Tiered Caching -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Tiered Fallback Cache</span>
+                  <span class="asc-pill">Card → Brand → Customer</span>
+                </div>
+                <p class="asc-desc">Designed hierarchical Redis lookup: <code>eligibility_points_check_brand_card_%d_%d_%d</code> with fallback to brand, customer, and legacy keys, eliminating multi-card balance bleed.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Per-Card Granularity</span>
+                  <span class="asc-chip">Backward Compatible</span>
+                  <span class="asc-chip">Sub-Millisecond Read</span>
+                </div>
+              </div>
+
+              <!-- Cache Invalidation -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Active Cache Invalidation</span>
+                  <span class="asc-pill">Zero Stale Balances</span>
+                </div>
+                <p class="asc-desc">Wired <code>DeleteEligibilityPointsCheckBrandCardCache</code> into both the successful short-circuit path and live confirm path, ensuring customers never see pre-redemption points.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Short-Circuit Invalidation</span>
+                  <span class="asc-chip">Confirm Invalidation</span>
+                  <span class="asc-chip">State Consistency</span>
+                </div>
+              </div>
+
+              <!-- Redis Error vs Nil -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Redis Outage Isolation</span>
+                  <span class="asc-pill">redis.Nil vs Conn Error</span>
+                </div>
+                <p class="asc-desc">Implemented <code>isCacheMiss()</code> to strictly distinguish missing keys (<code>redis.Nil</code>) from cluster outages, preventing infrastructure network glitches from erasing cached points.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Fail-Safe Fallback</span>
+                  <span class="asc-chip">Connection Guard</span>
+                  <span class="asc-chip">Cluster Reliability</span>
+                </div>
+              </div>
+
+              <!-- PostgreSQL Optimization -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Relational Optimization</span>
+                  <span class="asc-pill">PostgreSQL • GORM Atomic</span>
+                </div>
+                <p class="asc-desc">Replaced read-modify-write loops with <code>gorm.Expr("total_refund_points + ?")</code>. Replaced wildcard queries with 8 named columns on <code>c_issuer_imports</code> to minimize payload width.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">gorm.Expr In-DB</span>
+                  <span class="asc-chip">Narrowed Projections</span>
+                  <span class="asc-chip">Index Tuning</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="spec-row">
-            <div class="spec-domain">Cloud, DevOps & Observability</div>
-            <div class="spec-content">
-              <div class="spec-pill-group">
-                <span class="sp-badge">AWS (ECS, SSM Parameter Store, S3)</span>
-                <span class="sp-badge">Docker Containerization</span>
-                <span class="sp-badge">Kubernetes Probes</span>
-                <span class="sp-badge">Prometheus & Grafana</span>
-                <span class="sp-badge">Distributed Tracing</span>
+          <!-- Spec Category 4: Cloud, DevOps & Observability -->
+          <div class="apple-spec-group" data-spec-cat="cloud">
+            <div class="spec-group-header">
+              <span class="spec-group-tag">04 / INFRASTRUCTURE</span>
+              <h3 class="spec-group-title">Cloud, DevOps & Observability</h3>
+              <p class="spec-group-desc">AWS ECS task configurations, multi-tenant parameter management, and -92% log volume reduction.</p>
+            </div>
+            <div class="spec-cards-grid">
+              <!-- AWS ECS & SSM -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">AWS ECS & SSM Parameters</span>
+                  <span class="asc-pill">Canary • Consumer • Prod</span>
+                </div>
+                <p class="asc-desc">Configured and maintained over 25 ECS task definitions across API, worker, consumer, canary, and preprod tiers. Injected secrets and mobile hash salts via AWS SSM Parameter Store.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">ECS Fargate/EC2</span>
+                  <span class="asc-chip">SSM Secrets</span>
+                  <span class="asc-chip">Multi-Environment</span>
+                  <span class="asc-chip">Fail-Closed Hashing</span>
+                </div>
+              </div>
+
+              <!-- Log Optimization -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Log Compression Platform</span>
+                  <span class="asc-pill">-92% Log Noise (444M → 33M)</span>
+                </div>
+                <p class="asc-desc">Engineered a configurable logging platform with issuer-, customer-, and brand-level controls, cutting daily logs from 444M down to 33M lines/day (240GB down to 53GB/day).</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">444M → 33M Lines/Day</span>
+                  <span class="asc-chip">240GB → 53GB Storage</span>
+                  <span class="asc-chip">Cloud Cost Slashed</span>
+                  <span class="asc-chip">Granular Filters</span>
+                </div>
+              </div>
+
+              <!-- Alerting -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Alerting & Conversion Monitors</span>
+                  <span class="asc-pill">errors.Join • Slack API</span>
+                </div>
+                <p class="asc-desc">Automated detection of RBL <code>pointToCurrency</code> divergence with cache marker flags and error-joined Slack/email alert pipelines. Reduced MTTR from 4 days to 1 day.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Conversion Mismatch</span>
+                  <span class="asc-chip">errors.Join Pipeline</span>
+                  <span class="asc-chip">Slack Webhooks</span>
+                  <span class="asc-chip">75% MTTR Cut</span>
+                </div>
+              </div>
+
+              <!-- Containerization & Kubernetes -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Containers & Probes</span>
+                  <span class="asc-pill">Docker • Kubernetes</span>
+                </div>
+                <p class="asc-desc">Configured multi-stage Docker builds, liveness/readiness Kubernetes probes across 6 microservices at Maersk, and Prometheus metric exporters.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Docker Multi-Stage</span>
+                  <span class="asc-chip">K8s Probes</span>
+                  <span class="asc-chip">Prometheus Exporters</span>
+                  <span class="asc-chip">Grafana</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="spec-row">
-            <div class="spec-domain">Testing & Reliability</div>
-            <div class="spec-content">
-              <div class="spec-pill-group">
-                <span class="sp-badge">Gomock & Test Doubles</span>
-                <span class="sp-badge">Integration Test Suites (2,500+ LOC)</span>
-                <span class="sp-badge">VisualVM JVM Profiling</span>
-                <span class="sp-badge">Failure Mode Isolation</span>
+          <!-- Spec Category 5: Testing & Reliability -->
+          <div class="apple-spec-group" data-spec-cat="quality">
+            <div class="spec-group-header">
+              <span class="spec-group-tag">05 / VERIFICATION</span>
+              <h3 class="spec-group-title">Testing & Reliability Verification</h3>
+              <p class="spec-group-desc">Comprehensive test suites, strict mock hygiene, and JVM allocation profiling.</p>
+            </div>
+            <div class="spec-cards-grid">
+              <!-- Production Test Suites -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Production Test Suites</span>
+                  <span class="asc-pill">2,500+ Lines • Gomock</span>
+                </div>
+                <p class="asc-desc">Authored extensive test suites for RBL (713+ lines), AU Bank (503+ lines), PopClub (437+ lines), and BOBCard. Enforced strict mock verification with <code>mock.ExpectationsWereMet()</code>.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">2,500+ Lines Go Tests</span>
+                  <span class="asc-chip">Times(1) Hold Asserts</span>
+                  <span class="asc-chip">No gomock.Any()</span>
+                  <span class="asc-chip">Table-Driven Tests</span>
+                </div>
+              </div>
+
+              <!-- JobClaw Quality Metrics -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">JobClaw Test Ratio</span>
+                  <span class="asc-pill">0.82 Test-to-Code Ratio</span>
+                </div>
+                <p class="asc-desc">243 automated test functions across 152 Go files. Core domain package coverage: discovery 87.6%, LLM client 86.0%, Greenhouse API 79.4%, scoring 76.1%.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">243 Test Functions</span>
+                  <span class="asc-chip">13,123 Test LOC</span>
+                  <span class="asc-chip">87.6% Discovery Coverage</span>
+                  <span class="asc-chip">Deterministic Mocks</span>
+                </div>
+              </div>
+
+              <!-- JVM Memory Profiling -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">VisualVM JVM Profiling</span>
+                  <span class="asc-pill">50% Memory Cut (2.4GB → 1.2GB)</span>
+                </div>
+                <p class="asc-desc">Live memory snapshot analysis, heap dump profiling, GC pause inspection, and object allocation tracking on enterprise Spring Boot services at Maersk.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Heap Dump Analysis</span>
+                  <span class="asc-chip">Object Retention</span>
+                  <span class="asc-chip">Garbage Collection</span>
+                  <span class="asc-chip">Hotspot Elimination</span>
+                </div>
+              </div>
+
+              <!-- Failure Mode Isolation -->
+              <div class="apple-spec-card">
+                <div class="asc-top">
+                  <span class="asc-name">Silent-Success Bug Isolation</span>
+                  <span class="asc-pill">Absence of Evidence</span>
+                </div>
+                <p class="asc-desc">Specialized in diagnosing systems that report green while failing: partial multi-board failures, unescaped HTML in scoring regexes, and false-positive readiness checks.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Fail-Fast Traps</span>
+                  <span class="asc-chip">Partial State Returns</span>
+                  <span class="asc-chip">Edge-Case Hardening</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="spec-row">
-            <div class="spec-domain">Education</div>
-            <div class="spec-content">
-              <div class="spec-edu">
-                <strong>Ramaiah Institute of Technology, Bangalore</strong> — B.E. in Information Science (2020 – 2024) • <strong>CGPA: 9.17 / 10.0</strong>
+          <!-- Spec Category 6: Academic Foundation -->
+          <div class="apple-spec-group" data-spec-cat="all">
+            <div class="spec-group-header">
+              <span class="spec-group-tag">06 / ACADEMICS</span>
+              <h3 class="spec-group-title">Academic Foundation</h3>
+              <p class="spec-group-desc">Computer science and information engineering foundational pedigree.</p>
+            </div>
+            <div class="spec-cards-grid">
+              <div class="apple-spec-card academic-card">
+                <div class="asc-top">
+                  <span class="asc-name">Ramaiah Institute of Technology</span>
+                  <span class="asc-pill">CGPA: 9.17 / 10.0</span>
+                </div>
+                <p class="asc-desc">Bachelor of Engineering in Information Science (2020 – 2024), Bangalore, India. First Class with Distinction.</p>
+                <div class="asc-highlights">
+                  <span class="asc-chip">Data Structures & Algorithms</span>
+                  <span class="asc-chip">Operating Systems & Concurrency</span>
+                  <span class="asc-chip">Database Systems</span>
+                  <span class="asc-chip">Computer Networks</span>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

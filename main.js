@@ -115,6 +115,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
+  // 4b. Apple-Style Tech Specs Segment Filter
+  // --------------------------------------------------------------------------
+  const specFilterBtns = document.querySelectorAll('.spec-filter-btn');
+  const specGroups = document.querySelectorAll('.apple-spec-group');
+
+  specFilterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-spec-filter');
+      if (!filter) return;
+
+      specFilterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      specGroups.forEach((group) => {
+        const cat = group.getAttribute('data-spec-cat');
+        if (filter === 'all' || cat === filter || cat === 'all') {
+          group.classList.remove('hidden');
+        } else {
+          group.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // --------------------------------------------------------------------------
   // 5. 1-Click Email Clipboard Copy
   // --------------------------------------------------------------------------
   const copyEmailBtn = document.getElementById('copyEmailBtn');
